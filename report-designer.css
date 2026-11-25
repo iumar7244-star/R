@@ -1,0 +1,176 @@
+/* IUS AND SONS Report Designer add-on stylesheet.
+   Load after the main styles.css from report.html. */
+#reportDesigner .full{grid-column:1/-1}
+#reportDesigner input[type="range"]{width:100%;padding:0;accent-color:#4f46e5}
+#reportDesigner .designer-actions{display:flex;align-items:end;gap:8px;flex-wrap:wrap;margin:12px 0}
+#reportDesigner .designer-actions label{min-width:240px;flex:1}
+#reportDesigner h3{margin:18px 0 8px;color:#071433}
+.custom-table-editor{border:1px solid #dbe2ea;border-radius:8px;padding:12px;margin:10px 0;background:#f8fafc}
+.custom-table-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.custom-table-editor label{margin:8px 0}
+.custom-table-editor textarea{font:inherit;resize:vertical;min-height:65px;border:1px solid #cbd5e1;border-radius:5px;padding:9px;width:100%}
+.report-sheet .report-head.layout-above{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;gap:6px}
+.report-sheet .report-head.layout-above>div{text-align:center!important;width:100%}
+.report-sheet .report-head.layout-above .report-badge{display:block;object-fit:contain;margin:0 auto;max-width:100%}
+.report-sheet .report-head.layout-left{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:15px}
+.report-sheet .report-head.layout-left>div{text-align:left!important}
+.report-sheet .report-head.layout-center{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:15px}
+.report-sheet .report-head.layout-center>div{text-align:center!important}
+.report-sheet .report-head.layout-right{display:flex!important;flex-direction:row-reverse!important;align-items:center!important;justify-content:center!important;gap:15px}
+.report-sheet .report-head.layout-right>div{text-align:right!important}
+.report-sheet .report-head.layout-hidden{justify-content:center!important}
+.report-sheet .custom-report-table{margin-top:12px;break-inside:avoid;page-break-inside:avoid}
+.report-sheet .custom-report-table h3{font-size:12pt;margin:8px 0 4px;color:inherit}
+.report-sheet .custom-report-table table{width:100%;border-collapse:collapse;font-size:10.5pt;table-layout:fixed}
+.report-sheet .custom-report-table th,.report-sheet .custom-report-table td{border:1px solid currentColor;padding:5px 7px;text-align:start;overflow-wrap:anywhere}
+.report-sheet .custom-report-table th{background:#eef2f7;width:32%}
+.report-sheet.rtl .custom-report-table table{direction:rtl}
+.report-sheet.rtl .custom-report-table th,.report-sheet.rtl .custom-report-table td{text-align:right}
+.report-sheet .report-student-name{display:inline-block;line-height:1.35;overflow-wrap:anywhere}
+.report-sheet.rtl{direction:rtl;text-align:right}
+.report-sheet.rtl .report-head.layout-left>div,.report-sheet.rtl .report-head.layout-right>div{text-align:right!important}
+.report-sheet .table{width:100%;border-collapse:collapse;table-layout:auto}
+.report-sheet .table th,.report-sheet .table td{overflow-wrap:anywhere}
+.report-sheet.has-hdr .table th{background:var(--custom-table-header);color:var(--custom-table-header-text,#fff);border-color:var(--custom-table-header)}
+@media(max-width:700px){#reportDesigner .designer-actions{align-items:stretch;flex-direction:column}.report-sheet .report-head.layout-left,.report-sheet .report-head.layout-center,.report-sheet .report-head.layout-right{flex-wrap:wrap}}
+@media print{
+  #reportDesigner{display:none!important}
+  .report-sheet{break-after:page;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .report-sheet:last-child{break-after:auto;page-break-after:auto}
+  .report-sheet .custom-report-table{break-inside:avoid;page-break-inside:avoid}
+}
+
+/* ===== Combined (dual-class) report ===== */
+.report-sheet.dual{font-size:12pt;height:296mm;min-height:296mm;padding:10mm 12mm;overflow:hidden}
+.report-sheet.dual .dual-sec{margin-top:8px;break-inside:avoid}
+.report-sheet.dual .dual-sec-title{font-weight:bold;font-size:1.05em;padding:3px 8px;background:#eef2f7;border-inline-start:5px solid #1e3a8a;margin-bottom:3px}
+.report-sheet.dual .dual-sec .table{margin-top:3px;font-size:.95em}
+.report-sheet.dual .dual-sec .table th,.report-sheet.dual .dual-sec .table td{padding:3px 5px;line-height:1.25}
+.report-sheet.dual .dual-sec.rtl .table td:first-child{text-align:right}
+.report-sheet.dual .dual-sum{font-weight:bold;margin-top:3px;font-size:.95em}
+.report-sheet.dual .dual-total{font-size:1.1em;margin-top:8px;text-align:center;border-top:2px solid currentColor;padding-top:5px}
+.report-sheet.dual .meta{font-size:1em;line-height:1.45}
+.report-sheet.dual .dual-detail{font-weight:normal}
+.report-sheet.dual .report-type{font-size:1.05em}
+.report-sheet.dual .school-title{font-size:2em;line-height:1.15}
+.report-sheet.dual .location{margin:2px 0 6px}
+.report-sheet.dual .comment{font-size:.95em;margin-top:8px}
+.report-sheet.dual .footer{margin-top:14px}
+.report-sheet.dual.two{width:210mm;height:147mm;min-height:147mm;padding:4mm 7mm;margin:0 auto;overflow:hidden;font-size:10pt}
+.report-sheet.dual.two .report-head{flex-direction:row!important;gap:3mm!important;justify-content:center!important}
+.report-sheet.dual.two .report-head .report-badge{width:13mm!important;height:13mm!important}
+.report-sheet.dual.two .school-title{font-size:1.9em;line-height:1.1}
+.report-sheet.dual.two .location{margin:0;font-size:.9em}
+.report-sheet.dual.two .report-type{font-size:1em;margin-top:1px}
+.report-sheet.dual.two .meta{font-size:1em;line-height:1.3;margin-top:2px}
+.report-sheet.dual.two .student-photo{display:none}
+.report-sheet.dual.two .dual-cols{width:100%;border-collapse:separate;border-spacing:3mm 0;table-layout:fixed;margin:0}
+.report-sheet.dual.two .dual-cols>tbody>tr>td{vertical-align:top;padding:0;border:0;width:50%}
+.report-sheet.dual.two .dual-sec{margin-top:2px}
+.report-sheet.dual.two .dual-sec-title{font-size:1em;padding:1px 5px}
+.report-sheet.dual.two .table{font-size:.92em;margin-top:2px}
+.report-sheet.dual.two .table th,.report-sheet.dual.two .table td{padding:1px 3px;border-width:1px;line-height:1.2}
+.report-sheet.dual.two .dual-sum{font-size:.9em;margin-top:2px}
+.report-sheet.dual.two .dual-total{font-size:1em;margin-top:3px;padding-top:2px}
+.report-sheet.dual.two .comment{font-size:.9em;margin-top:3px;padding:2px 5px;line-height:1.25}
+.report-sheet.dual.two .custom-report-table{margin-top:3px}
+.report-sheet.dual.two .custom-report-table h3{font-size:.95em;margin:2px 0}
+.report-sheet.dual.two .custom-report-table table{font-size:.85em}
+.report-sheet.dual.two .custom-report-table th,.report-sheet.dual.two .custom-report-table td{padding:1px 4px}
+.report-sheet.dual.two .footer{margin-top:3px!important;font-size:.85em}
+@media print{
+  .report-sheet.dual{margin:0!important}
+  .report-sheet.dual.two{height:147mm;break-after:auto;page-break-after:auto}
+  .report-sheet.dual.two:nth-child(2n){break-after:page;page-break-after:always}
+  .report-sheet.dual.two:last-child{break-after:auto;page-break-after:auto}
+  .report-sheet.dual:not(.two){break-after:page}
+}
+
+/* 1.5.8: the report generator / designer page scrolls up and down (the app-wide "fixed frame" rule locked this page) */
+@media screen{
+  html,body{height:auto!important;min-height:100%;overflow-x:hidden!important;overflow-y:auto!important}
+  .ius-report-page,.ius-report-page.show,#iusReportPage.ius-page-after-intro.show{height:auto!important;min-height:100vh;max-height:none!important;overflow:visible!important}
+  .ius-report-page.show{padding-top:var(--ius-window-bar-height,36px)}
+}
+
+/* 1.5.15 — five icon boxes */
+.rg{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 12px;max-width:1150px;margin:18px auto 8px;padding:0 14px}
+.rg-item{display:contents}
+.rg-box{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;margin:0 0 12px;padding:16px 10px;background:#fff;color:#071433;border:1px solid #dbe3ef;border-radius:16px;box-shadow:0 2px 8px #0f172a12;cursor:pointer;font:inherit;position:relative;scroll-margin-top:48px;transition:box-shadow .18s,background .25s,border-color .25s,color .25s}
+.rg-box:hover{box-shadow:0 8px 18px #0f172a1f;border-color:#a5b4fc}
+.rg-box:focus-visible{outline:3px solid #818cf8;outline-offset:2px}
+.rg-ico{width:48px;height:48px;border-radius:14px;background:#eef2ff;color:#4f46e5;display:flex;align-items:center;justify-content:center;flex:none;transition:background .25s,color .25s}
+.rg-tx b{display:block;font-size:15px}.rg-tx small{display:block;margin-top:2px;font-size:12px;font-weight:400;color:#64748b}
+.rg-chev{display:none;margin-left:auto;transition:transform .25s;color:#94a3b8}
+.rg-item.open .rg-box{background:linear-gradient(135deg,#04051a,#312e81);color:#fff;border-color:#4f46e5;box-shadow:0 10px 22px #4f46e55c}
+.rg-item.open .rg-ico{background:#4f46e5;color:#fff}.rg-item.open .rg-tx small{color:#c7d2fe}
+.rg-item.open .rg-box::after{content:"";position:absolute;left:50%;bottom:-7px;width:14px;height:14px;background:#312e81;transform:translateX(-50%) rotate(45deg)}
+.rg-panel{grid-column:1/-1;grid-row:2;display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .3s ease,visibility 0s .3s}
+.rg-item.open .rg-panel{grid-template-rows:1fr;visibility:visible;transition-delay:0s}
+.rg-inner{overflow:hidden;min-height:0}
+.rg-card{background:#fff;border:1px solid #dbe3ef;border-radius:16px;padding:18px;margin:4px 0 12px;box-shadow:0 6px 18px #0f172a14}
+.rg-card section{background:transparent;box-shadow:none;padding:0;margin:0;border-radius:0}
+.rg-sub{margin:20px 0 8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#4f46e5}.rg-sub.first{margin-top:0}
+.rg-actions{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}.rg-actions select{flex:1;min-width:220px}
+@media(max-width:760px){
+ .rg{display:block}.rg-item{display:block;margin-bottom:10px}
+ .rg-box{flex-direction:row;text-align:left;width:100%;margin:0;padding:12px 14px}
+ .rg-ico{width:42px;height:42px}.rg-chev{display:block}.rg-item.open .rg-chev{transform:rotate(180deg);color:#c7d2fe}
+ .rg-item.open .rg-box::after{display:none}.rg-card{padding:14px}
+}
+@media(prefers-reduced-motion:reduce){.rg-box,.rg-panel,.rg-chev{transition:none}}
+@media print{.rg{display:none!important}}
+
+/* 1.5.16 embedded inside the dashboard: no page header, no extra padding, height follows the content */
+html.embed header{display:none}
+html.embed body{background:transparent}
+html.embed .rg{margin-top:0}
+html.embed,html.embed body{min-height:0!important}
+html.embed .ius-report-page,html.embed .ius-report-page.show,html.embed #iusReportPage.ius-page-after-intro.show{padding-top:0!important;min-height:0!important}
+
+/* 1.5.17 instant: no open/close animation, no scrollbar flicker inside the dashboard */
+.rg-panel,.rg-box,.rg-ico,.rg-chev{transition:none!important}
+html.embed,html.embed body{overflow:hidden!important}
+
+/* 1.5.45 combined Secular + Primary Theology A4 default layout */
+.report-sheet.dual:not(.two){box-sizing:border-box;width:210mm;height:296mm;min-height:296mm;padding:5mm 7mm;overflow:hidden;font-size:10pt}
+.report-sheet.dual:not(.two) .report-head{margin-bottom:1.5mm}
+.report-sheet.dual:not(.two) .report-badge{object-fit:contain}
+.report-sheet.dual:not(.two) .school-title{font-size:20pt;line-height:1.08}
+.report-sheet.dual:not(.two) .dual-report-type{text-align:center;font-weight:700;font-size:13pt;margin:1mm 0 1.5mm}
+.report-sheet.dual:not(.two) .meta{font-size:9.5pt;line-height:1.25;margin-bottom:1.5mm}
+.report-sheet.dual:not(.two) .dual-sec{margin-top:1.5mm;break-inside:avoid;page-break-inside:avoid}
+.report-sheet.dual:not(.two) .dual-sec-title{font-size:11.5pt;padding:2px 6px;background:#1e3a8a;color:#fff;border:1px solid #1e3a8a;border-inline-start:1px solid #1e3a8a;text-align:center}
+.report-sheet.dual:not(.two) .secular-grade-banner{width:100%;text-align:center;font-size:13pt;font-weight:800;border:1px solid #1e3a8a;background:#eaf3ff;padding:2px;margin-bottom:1px}
+.report-sheet.dual:not(.two) .result-table,.report-sheet.dual:not(.two) .grade-summary{width:100%;border-collapse:collapse;table-layout:auto;margin:0 0 1mm;font-size:9.2pt}
+.report-sheet.dual:not(.two) .result-table th,.report-sheet.dual:not(.two) .result-table td,.report-sheet.dual:not(.two) .grade-summary th,.report-sheet.dual:not(.two) .grade-summary td{border:1px solid #1e3a8a;padding:3px 4px;line-height:1.2;text-align:center;overflow-wrap:normal;word-break:normal}
+.report-sheet.dual:not(.two) .result-table th,.report-sheet.dual:not(.two) .grade-summary th{background:#dcecff;font-weight:700}
+.report-sheet.dual:not(.two) .dual-sec.rtl .result-table,.report-sheet.dual:not(.two) .dual-sec.rtl .grade-summary{direction:rtl}
+.report-sheet.dual:not(.two) .dual-sec.rtl .result-table td:first-child{text-align:right}
+.report-sheet.dual:not(.two) .aggregate-final th,.report-sheet.dual:not(.two) .aggregate-final td{background:#eaf3ff;font-weight:700}
+.report-sheet.dual:not(.two) .total-row th,.report-sheet.dual:not(.two) .total-row td{background:#eaf3ff;font-weight:700}
+.report-sheet.dual:not(.two) .comment{font-size:9pt;margin:1mm 0 0;padding:2px 4px;border:1px solid #1e3a8a;line-height:1.25}
+.report-sheet.dual:not(.two) .headmaster-comment{border:1px solid #1e3a8a;margin-top:1.5mm;padding:2px 4px;font-size:9pt;min-height:8mm}
+.report-sheet.dual:not(.two) .headmaster-line{height:3mm;border-bottom:1px solid #64748b}
+.report-sheet.dual:not(.two) .footer{display:flex;justify-content:space-between;gap:3mm;margin-top:1.5mm;font-size:9pt}
+.report-sheet.dual:not(.two) .lower-primary-report .grade-summary{display:none}
+.report-sheet.dual:not(.two) .lower-primary-position{font-size:12pt}
+.report-sheet.dual:not(.two) .lower-primary-report .result-table{font-size:9.5pt}
+@page{size:A4 portrait;margin:0}
+@media print{.report-sheet.dual:not(.two){break-after:page;page-break-after:always}.report-sheet.dual:not(.two):last-child{break-after:auto;page-break-after:auto}}
+
+/* 1.5.51 — editable report-card layout controls. The report generator remains data-driven; these rules only consume designer variables. */
+.report-sheet{box-sizing:border-box;padding:var(--report-padding,12.7mm)!important;}
+.report-sheet .report-type{font-size:var(--report-type-size,10pt)!important;font-weight:var(--report-type-weight,bold)!important;display:inline-block;max-width:100%;line-height:1.15;margin:2mm auto 1mm;padding:1.5mm 4mm;border:1px solid currentColor;background:transparent;border-radius:3px;}
+.report-sheet .report-meta{font-size:inherit;}
+.report-sheet .student-banner{display:block;margin-bottom:2mm;padding:2mm 3mm;border-bottom:1px solid currentColor;}
+.report-sheet .report-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid currentColor;}
+.report-sheet .report-detail{padding:1.5mm 2mm;border-inline-end:1px solid currentColor;border-bottom:1px solid currentColor;display:flex;justify-content:space-between;gap:2mm;}
+.report-sheet .report-detail:nth-child(2n){border-inline-end:0;}
+.report-sheet .report-stats{display:flex;flex-wrap:wrap;gap:4mm;margin-top:2mm;}
+.report-sheet .report-stats span{padding:1mm 2mm;border:1px solid currentColor;}
+.report-sheet .table{font-size:var(--report-table-font,10pt);}
+@media print{.report-sheet{padding:var(--report-padding,12.7mm)!important;} }
+
+.report-sheet.dual .dual-report-type{font-size:var(--report-type-size,10pt)!important;font-weight:var(--report-type-weight,bold)!important;}
+.report-sheet.dual .report-badge{width:var(--badge-size,42px)!important;height:var(--badge-size,42px)!important;}

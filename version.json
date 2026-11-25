@@ -1,0 +1,5 @@
+{
+  "app": "ius-sons",
+  "version": "1.5.81",
+  "notes": "Version 1.5.81 updates the Home Screen and authentication hero artwork: the IUS AND SONS emblem is placed directly on the man's laptop lid without a separate logo panel. Existing navigation, forms, window controls, and application logic are retained."
+}

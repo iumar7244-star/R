@@ -1,0 +1,163 @@
+body .appShell{background:#eef4fc}
+body .sidebar{background:linear-gradient(180deg,#0a2f85,#06194d)!important;color:#fff;width:250px;overflow-y:auto}
+body .sidebar .sideBrand{display:block;padding:14px 12px;text-align:left;line-height:1.2}
+body .sidebar .sideBrand img{width:56px;display:block;margin-bottom:6px}
+body .sidebar .sideBrand span{font-weight:800;font-size:15px;display:block}
+body .sidebar .sideBrand small{display:block;font-size:11px;opacity:.85;margin-top:3px}
+body .sidebar .navlink{display:block;width:100%;text-align:left;background:none;border:0;color:#fff;padding:9px 14px;font-size:14px;border-radius:0}
+body .sidebar .navlink.active{background:#1565e8}
+body .sidebar .navlink.sub{padding-left:38px;font-size:13px;opacity:.92}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.topbar h1{margin:0;font-size:22px;color:#0a2f85}.topbar p{margin:2px 0 0;font-style:italic;color:#1e4fb8}
+.tb-r{display:flex;gap:14px;align-items:center;color:#0a2f85;font-size:13px}.chip{background:#fff;border-radius:20px;padding:6px 12px;box-shadow:0 1px 4px #0002}
+.dcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.dc{border-radius:6px;color:#fff;padding:12px;cursor:pointer}.dc b{display:block;font-size:22px;margin:4px 0}.dc small{font-size:12px}
+.c-blue{background:#0f62e6}.c-green{background:#0f9d46}.c-purple{background:#7b4cc9}.c-orange{background:#f59e0b}.c-red{background:#ef3b4f}.c-teal{background:#0d9488}.c-pink{background:#f0455f}.c-olive{background:#5f8a2b}.c-navy{background:#1e3f9c}.c-cyan{background:#0aa5b8}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:12px}
+.panel{background:#fff;border-radius:6px;padding:12px;box-shadow:0 1px 4px #0001;overflow-x:auto}.panel h4{margin:0 0 8px;color:#0a2f85}
+.qa{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.qa button{color:#fff;border:0;border-radius:6px;padding:12px 4px;font-size:12px;font-weight:600;cursor:pointer}
+.dt{width:100%;border-collapse:collapse;font-size:12.5px}.dt th{background:#e8f0fb;text-align:left}.dt th,.dt td{padding:6px 8px;border-bottom:1px solid #e3e9f3}.dt tr.tot td{font-weight:700;background:#e8f0fb}
+.dfoot{display:flex;justify-content:space-between;font-size:12px;color:#1e4fb8;padding:6px 2px}
+.tabs button{margin:0 4px 8px 0}.bad{color:#dc2626;font-weight:600}.ok{background:#16a34a;color:#fff;border-radius:4px;padding:2px 8px;font-size:12px}.lo{background:#f59e0b;color:#fff;border-radius:4px;padding:2px 8px;font-size:12px}
+.rcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.rcard{background:#fff;border-radius:8px;padding:18px;text-align:center;box-shadow:0 1px 4px #0001;cursor:pointer;text-decoration:none;color:#0a2f85;display:block}.rcard span{font-size:28px;display:block}
+@media print{.sidebar,.topbar,.noprint{display:none!important}}
+
+
+/* IUS AND SONS — Light/Dark appearance themes */
+body{transition:background-color .18s ease,color .18s ease}
+.theme-toggle{margin:0;padding:8px 11px;border:1px solid #ffffff55;border-radius:7px;background:#ffffff18;color:inherit;font-weight:700;white-space:nowrap}
+.theme-toggle:hover{filter:brightness(1.08)}
+.theme-settings{padding:14px;border:1px solid #dbe4ef;border-radius:10px;margin:8px 0 18px}
+.theme-settings label{max-width:360px}
+.theme-settings .hint{margin-top:10px}
+body.dark-mode{background:#121820!important;color:#f1f5f9!important;color-scheme:dark}
+body.dark-mode .appShell{background:#121820!important}
+body.dark-mode .sidebar{background:#0b1720!important;color:#f1f5f9!important}
+body.dark-mode .sidebar .navlink{color:#f1f5f9!important}
+body.dark-mode .sidebar .navlink.active{background:#1677e8!important;color:#fff!important}
+body.dark-mode .schoolMini{color:#dbeafe!important}
+body.dark-mode .appMain{background:#121820!important;color:#f1f5f9!important}
+body.dark-mode .topbar{background:#162b36!important;color:#f1f5f9!important;padding:14px 16px;border-radius:10px}
+body.dark-mode .topbar h1,body.dark-mode .topbar p,body.dark-mode .tb-r,body.dark-mode .dfoot{color:#f1f5f9!important}
+body.dark-mode .chip{background:#263442!important;color:#f1f5f9!important}
+body.dark-mode .view,body.dark-mode section:not(.report-sheet),body.dark-mode .panel,body.dark-mode .card,body.dark-mode .student,body.dark-mode .choiceCard,body.dark-mode .theme-settings{background:#1c2733!important;color:#f1f5f9!important;border-color:#344452!important}
+body.dark-mode h1,body.dark-mode h2,body.dark-mode h3,body.dark-mode h4,body.dark-mode p,body.dark-mode label,body.dark-mode .hint,body.dark-mode .card span{color:#e6edf5}
+body.dark-mode .hint{background:#263442!important;border-left-color:#d4a843!important;color:#dce5ee!important}
+body.dark-mode input,body.dark-mode select,body.dark-mode textarea{background:#263442!important;color:#f1f5f9!important;border-color:#4a5a69!important}
+body.dark-mode input::placeholder,body.dark-mode textarea::placeholder{color:#b0bec5!important}
+body.dark-mode .datatable th,body.dark-mode .dt th,body.dark-mode .dt tr.tot td{background:#263442!important;color:#f1f5f9!important}
+body.dark-mode .datatable td,body.dark-mode .dt td{color:#e6edf5!important;border-color:#344452!important}
+body.dark-mode .tag{background:#34465a!important;color:#e6edf5!important}
+body.dark-mode .tabs .tab{background:#344452!important;color:#f1f5f9!important}
+body.dark-mode .tabs .tab.active{background:#1677e8!important;color:#fff!important}
+body.dark-mode .theme-settings{border-color:#344452!important}
+body.dark-mode .subject input.subname[readonly],body.dark-mode .grade{background:#263442!important;color:#f1f5f9!important}
+body.dark-mode .msg{color:#fca5a5!important}
+body.dark-mode hr{border-color:#344452!important}
+@media(max-width:700px){.topbar{align-items:flex-start}.tb-r{flex-wrap:wrap}}
+@media print{body.dark-mode{background:#fff!important;color:#111827!important}body.dark-mode .appShell,body.dark-mode .appMain{background:#fff!important;color:#111827!important}}
+
+/* Customisable IUS AND SONS brand bars */
+:root{--ius-sidebar:#0B2545;--ius-topbar:#123F70}
+body .sidebar{background:var(--ius-sidebar)!important}
+body .sidebar .navlink.active{background:#1677E8!important;color:#fff!important}
+body .topbar{background:var(--ius-topbar);color:#fff;padding:14px 16px;border-radius:10px}
+body .topbar h1,body .topbar p,body .tb-r{color:#fff}
+.theme-settings label{display:inline-flex;flex-direction:column;gap:6px;margin:8px 18px 8px 0}
+.theme-settings select{min-width:250px}
+.theme-colors{display:flex;gap:22px;flex-wrap:wrap}
+.theme-colors input[type=color]{width:72px;height:42px;padding:3px;cursor:pointer}
+.theme-preview{display:flex;min-height:150px;border:1px solid #dbe4ef;border-radius:9px;overflow:hidden;margin:14px 0;background:#f4f7fb;color:#172b4d}
+#themePreviewSide{width:170px;flex-shrink:0;padding:16px 12px;font-weight:800;line-height:1.8}
+#themePreviewSide small{font-weight:500;line-height:2}
+#themePreviewMain{flex:1;min-width:0}
+#themePreviewTop{padding:16px;font-weight:800;color:#fff;line-height:1.4}
+.theme-preview-content{padding:20px;font-size:14px}
+body.dark-mode .topbar{background:var(--ius-topbar)!important;color:#fff!important}
+body.dark-mode .topbar h1,body.dark-mode .topbar p,body.dark-mode .tb-r{color:#fff!important}
+body.dark-mode .sidebar{background:var(--ius-sidebar)!important}
+
+/* Version 1.5.6: keep Reports usable in the same independently scrolling content area */
+#view-reports{min-height:0;max-width:100%;overflow:visible}
+#view-reports .body{min-width:0;overflow-x:auto;overflow-y:visible}
+#view-reports .rcards{margin-bottom:16px}
+#view-reports .datatable{min-width:520px}
+#view-fees{min-height:0;max-width:100%}
+#view-fees .body{min-width:0;overflow-x:auto}
+#view-fees .grid{align-items:start}
+#view-fees input[type="number"]{max-width:100%}
+
+/* Version 1.5.7: payment bands, class fee graph, teacher payroll, and independently scrollable Reports */
+.fee-graph-legend{font-size:12px;margin:0 0 8px}
+.fee-graph-wrap{max-height:360px;overflow-y:auto;overflow-x:hidden;border:1px solid #e5e7eb;border-radius:8px;padding:6px;margin-bottom:14px}
+.fee-graph-wrap svg{display:block;min-width:340px}
+.payment-bands{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:12px 0 22px}
+.payment-band{border:1px solid #dbe3ed;border-radius:9px;padding:12px;min-width:0;background:var(--card,#fff)}
+.payment-band-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px}
+.payment-band-head span{font-size:12px;white-space:nowrap;color:#64748b}
+.payment-band-list{max-height:180px;overflow:auto;font-size:13px}
+.payment-band-list>div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid #e5e7eb}
+.payment-band-list>div span{overflow-wrap:anywhere}
+.payroll-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:16px 0}
+.payroll-summary>div{border:1px solid #dbe3ed;border-radius:9px;padding:13px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.payroll-summary small{color:#64748b}.payroll-summary b{overflow-wrap:anywhere}
+#tc-payroll{margin-top:18px;max-width:100%;min-width:0}
+#tc-payroll .grid{align-items:start}
+#tc-payroll input,#tc-payroll select{max-width:100%}
+#view-reports{min-height:0;max-width:100%;overflow:visible}
+#view-reports .body{min-width:0;max-height:calc(100vh - 205px);overflow-y:auto;overflow-x:auto;overscroll-behavior:contain;padding-bottom:24px}
+#view-reports #repOut{min-width:0;padding-bottom:24px}
+#view-reports .datatable{min-width:520px}
+@media(max-width:700px){.payment-bands{grid-template-columns:1fr}.payroll-summary{grid-template-columns:repeat(2,minmax(0,1fr))}#view-reports .body{max-height:calc(100vh - 170px)}}
+
+/* ===== 1.5.8 ===== */
+/* white areas: words in dark green (light mode) */
+body:not(.dark-mode) .tb-r .chip,body:not(.dark-mode) .tb-r .chip *{color:#14532d!important}
+body:not(.dark-mode) .payment-band,body:not(.dark-mode) .payment-band *,body:not(.dark-mode) h3.dg{color:#14532d!important}
+body:not(.dark-mode) .pcard,body:not(.dark-mode) .pcard b,body:not(.dark-mode) .pcard small{color:#14532d!important}
+/* class / student ids */
+.cls-id{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:99px;background:#e8f5ec;color:#14532d;font-size:12px;font-weight:700;letter-spacing:.3px}
+td small.cls-id{display:block;margin:3px 0 0;width:max-content}
+.done-tag{color:#92400e;font-weight:700;font-size:12px}
+/* visitors week */
+.vweek{display:grid;grid-template-columns:repeat(8,minmax(80px,1fr));gap:10px;margin:12px 0 18px}
+.vday{background:#fff;border:1px solid #dbe3ed;border-radius:10px;padding:10px;text-align:center;color:#14532d}
+.vday b{display:block;font-size:26px}.vday small,.vday span{display:block;font-size:12px}
+.vday.today{border:2px solid #16a34a}.vday.total{background:#14532d;color:#fff}
+body.dark-mode .vday{background:#1f2f3a;color:#e5f5ea;border-color:#334155}body.dark-mode .vday.total{background:#166534}
+@media(max-width:900px){.vweek{grid-template-columns:repeat(4,1fr)}}
+.promo-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px;margin-top:14px;color:#14532d}
+.promo-box h4{margin:0 0 6px}.promo-box .row{display:flex;gap:10px;align-items:end;flex-wrap:wrap}
+body.dark-mode .promo-box{background:#16301f;border-color:#2f6b45;color:#d7f5e0}
+
+/* 1.5.9 student boxes per class */
+#st-boxes{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-top:18px;align-items:start}
+.cb{border:2px solid var(--bx);border-radius:14px;overflow:hidden;background:color-mix(in srgb,var(--bx) 9%,transparent)}
+.cb-h{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bx);color:var(--bt)}
+.cb-h>div{flex:1;min-width:0}.cb-h b{display:block;font-size:16px}.cb-h small{display:block;opacity:.85;font-size:11px}
+.cb-n{background:#fff3;border-radius:99px;padding:2px 10px;font-weight:700}
+.cb-color{width:30px;height:26px;padding:0;border:2px solid #fff;border-radius:6px;cursor:pointer;background:none}
+.cb-list{max-height:340px;overflow-y:auto;padding:8px}
+.cb-st{display:flex;align-items:center;gap:10px;padding:6px 8px;border-radius:9px;cursor:pointer}
+.cb-st:hover{background:color-mix(in srgb,var(--bx) 18%,transparent)}
+.cb-st .avatar{width:30px;height:36px;flex:none}
+.cb-st b{display:block;font-size:14px}.cb-st small{opacity:.75;font-size:11px}
+
+/* 1.5.13 staff groups */
+.sf-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:14px}
+.sf-cat{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;cursor:pointer;border:2px solid var(--c);background:color-mix(in srgb,var(--c) 10%,transparent);user-select:none}
+.sf-cat.t{--c:#1677e8}.sf-cat.n{--c:#d97706}
+.sf-cat.on{background:var(--c)}.sf-cat.on,.sf-cat.on b,.sf-cat.on small{color:#fff!important}
+.sf-ic{font-size:28px}.sf-cat>div{flex:1}.sf-cat b{display:block;font-size:17px}.sf-cat small{opacity:.8;font-size:12px}
+.sf-n{background:var(--c);color:#fff;border-radius:99px;padding:3px 12px;font-weight:700}.sf-cat.on .sf-n{background:#fff3}
+.sf-people.t .pcard{border-left:5px solid #1677e8}.sf-people.n .pcard{border-left:5px solid #d97706}
+.sf-pay{margin-top:6px;padding-top:6px;border-top:1px dashed #94a3b8}
+.sf-pay b{display:block;font-size:13px}
+.sf-pay.none b{color:#92400e!important}
+.sf-bar{height:6px;border-radius:99px;background:#cbd5e1;margin:4px 0;overflow:hidden}.sf-bar i{display:block;height:100%;background:#16a34a}
+.tp-pay{margin-top:16px;padding-top:12px;border-top:2px solid #cbd5e1}
+
+/* 1.5.35 — design theme picker beside the Dark/Light button in the top bar */
+.tb-r .theme-pick{display:inline-flex!important;flex-direction:row;align-items:center;gap:6px;margin:0!important;padding:0;font-weight:700;white-space:nowrap;width:auto!important}
+.tb-r .theme-pick select.theme-toggle{display:inline-block;width:auto!important;min-width:0;height:auto;margin:0!important;cursor:pointer;font:inherit;font-weight:700;color:#fff;background-color:#ffffff18}
+.tb-r .theme-pick select.theme-toggle option{color:#0b1b3f;background:#fff}

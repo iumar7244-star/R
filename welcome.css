@@ -1,0 +1,202 @@
+/* IUS AND SONS 1.5.42 — welcome pages in navy blue (Home, Sign In, Register, Platform Admin sign-in). Look and layout only. */
+html{--wl-bar:0px}html.wl-win{--wl-bar:40px}
+body.wl{--nv:#0b2545;--nv2:#13315c;--nv3:#1d4e89;--nvl:#eef4fb;--ink:#0b2545;--mut:#4b5f80;--ln:#cfdcee;--gold:#f2b01e}
+html body.wl:not(.wl-adm):is(.dark-mode,:not(.dark-mode)){background:#eef4fb!important;color:var(--ink)!important;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+html body.wl:not(.wl-adm):is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro.show{display:flex;flex-direction:column;height:100vh;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;padding-top:var(--wl-bar);background:transparent!important}
+html body.wl:not(.wl-adm):is(.dark-mode,:not(.dark-mode))::before,html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox::before{content:"";position:fixed;inset:-9%;z-index:-1;pointer-events:none;will-change:transform;background:radial-gradient(520px 420px at 15% 20%,rgba(120,185,255,.95),transparent 70%),radial-gradient(560px 460px at 85% 15%,rgba(90,215,255,.65),transparent 70%),radial-gradient(640px 520px at 80% 90%,rgba(47,123,255,.85),transparent 70%),radial-gradient(520px 460px at 10% 95%,rgba(150,120,255,.40),transparent 70%),linear-gradient(150deg,#f4f9ff,#cfe3ff 55%,#a9ccff);animation:wlDrift 20s ease-in-out infinite alternate}
+@keyframes wlDrift{from{transform:translate3d(-3%,-2%,0) scale(1.05)}to{transform:translate3d(3%,2%,0) scale(1.05)}}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox::before{position:absolute;inset:0;z-index:0;animation:none;will-change:auto}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox>*{position:relative;z-index:1}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox{position:fixed!important;left:0;right:0;bottom:0;top:var(--wl-bar);z-index:60;overflow-y:auto;overflow-x:hidden;background:#e3edf9!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;max-width:none!important;backdrop-filter:none!important;display:flex;flex-direction:column}
+/* header */
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-top{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px;padding:0 30px;background:rgba(255,255,255,.96)!important;border-bottom:1px solid #dbe6f4;box-shadow:0 4px 18px rgba(11,37,69,.10);position:sticky;top:0;z-index:5;-webkit-app-region:drag}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;-webkit-app-region:no-drag}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-brand img{width:44px;height:44px;object-fit:contain;filter:none!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-brand b{display:block;font-size:19px;letter-spacing:.4px;color:var(--nv)!important;line-height:1.05;font-weight:800}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-brand small{display:block;font-size:12px;color:var(--nv2)!important;margin-top:2px;font-weight:600}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav{display:flex;align-items:center;gap:6px;-webkit-app-region:no-drag}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;color:var(--nv)!important;white-space:nowrap}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a:hover{background:#e6eef9!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a.on{background:linear-gradient(180deg,#5aa2ff,#1f6fe5 55%,#0b57e0)!important;color:#fff!important;box-shadow:0 6px 14px rgba(11,37,69,.3)}
+/* scene */
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-view{flex:1 0 auto;display:flex}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-scene{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 66px - var(--wl-bar))}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-scene.reg{grid-template-columns:1fr 1.18fr}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L{position:relative;display:flex;flex-direction:column;overflow:hidden}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-art{flex:1 1 0;min-height:0;display:flex;align-items:flex-end;justify-content:center;padding:18px 24px 0;position:relative;z-index:1}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-art .wl-art{height:100%;width:auto;max-width:100%;max-height:100%;filter:drop-shadow(0 18px 22px rgba(6,25,58,.30))}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-pan{position:relative;z-index:2;flex:0 0 auto;margin-top:-22px;padding:46px 36px 24px 44px;width:94%;color:#fff!important;background:linear-gradient(150deg,#1d4e89 0%,#13315c 50%,#0b2545 100%)!important;border-radius:0 240px 0 0;box-shadow:0 -10px 30px rgba(11,37,69,.25)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-pan b{display:block;font-size:clamp(28px,3vw,40px);font-style:italic;font-weight:800;line-height:1.1;color:#fff!important;text-shadow:none!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-pan span{display:block;margin-top:6px;font-size:17px;font-style:italic;line-height:1.35;color:#d6e3f5!important;max-width:380px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-pan i{display:block;width:150px;height:14px;margin-top:10px;border-radius:50%;border-top:4px solid var(--gold)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-R{position:relative;display:flex;align-items:center;justify-content:center;padding:22px 34px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card{width:100%;max-width:470px;background:rgba(255,255,255,.95)!important;border:1px solid #e0e9f6;border-radius:22px;padding:28px 32px 22px;box-shadow:0 22px 56px rgba(11,37,69,.22);}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card.wide{max-width:640px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-h{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 0 6px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-h .bd{flex:0 0 50px;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(160deg,#5aa2ff,#1f6fe5 55%,#0b4fd6)!important;box-shadow:0 8px 18px rgba(11,37,69,.35)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-h .bd svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-h h3{margin:0;font-size:28px;font-weight:800;color:var(--nv)!important;text-shadow:none!important;line-height:1.1}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-sub{margin:0 0 16px;text-align:center;font-size:14.5px;color:var(--mut)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-grid .full{grid-column:1/-1}
+html body.wl:is(.dark-mode,:not(.dark-mode)) label.wl-f{display:block;margin:0 0 12px;font-size:13px;font-weight:700;color:var(--nv)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-grid label.wl-f{margin:0}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in{display:flex;align-items:stretch;margin-top:5px;height:46px;overflow:hidden;background:#fff!important;border:1.5px solid var(--ln);border-radius:11px;transition:border-color .15s,box-shadow .15s}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in:focus-within{border-color:var(--nv3);box-shadow:0 0 0 3px rgba(29,78,137,.2)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in>svg{flex:0 0 44px;width:44px;height:100%;padding:12px;box-sizing:border-box;background:#f0f5fc;border-right:1.5px solid var(--ln);stroke:var(--nv);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in input:not([type=checkbox]):not([type=radio]):not([type=color]):not([type=range]){flex:1;min-width:0;width:100%;height:100%;border:0!important;outline:0!important;background:transparent!important;box-shadow:none!important;color:var(--nv)!important;font-size:15px;padding:0 12px!important;margin:0!important;border-radius:0!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in input:not([type=checkbox]):not([type=radio]):not([type=color]):not([type=range]):focus{border:0!important;box-shadow:none!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in input:not([type=checkbox]):not([type=radio]):not([type=color]):not([type=range])::placeholder{color:#8a9bb8!important;opacity:1}
+html body.wl:is(.dark-mode,:not(.dark-mode)) button.wl-eye{flex:0 0 40px;width:40px;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;display:grid;place-items:center;cursor:pointer}
+html body.wl:is(.dark-mode,:not(.dark-mode)) button.wl-eye svg{width:20px;height:20px;stroke:#34486b;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-row{display:flex;align-items:center;justify-content:space-between;margin:2px 0 4px;font-size:13.5px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-row label{display:flex!important;flex-direction:row!important;align-items:center;gap:8px;margin:0;font-weight:600;color:var(--nv)!important;cursor:pointer}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-row input[type=checkbox]{width:17px!important;height:17px!important;margin:0!important;flex:0 0 auto;accent-color:var(--nv2)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-row a{color:var(--nv3)!important;font-weight:700;text-decoration:none}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:52px;margin:14px 0 0;border:0!important;border-radius:12px!important;background:linear-gradient(180deg,#5aa2ff,#2f7bff 45%,#0b57e0)!important;color:#fff!important;font-size:17px;font-weight:700;letter-spacing:.3px;cursor:pointer;box-shadow:0 12px 24px rgba(31,111,229,.5),inset 0 1px 0 rgba(255,255,255,.55)!important;text-shadow:none!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-btn svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-btn:hover{filter:brightness(1.15)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card .msg{min-height:18px;margin:8px 0 0;font-size:13px;text-align:center}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-foot{margin:8px 0 0;padding-top:10px;border-top:1px solid #dbe6f4;text-align:center;font-size:14.5px;color:var(--ink)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card a.wl-link,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-foot a{color:var(--nv3)!important;font-weight:800;text-decoration:none}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card .hint{margin:8px 0 0;font-size:12.5px;color:var(--mut)!important;text-align:center;border:0!important;background:none!important;padding:0!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card p{color:var(--ink)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card .schoolIdBox{background:#eef4fb!important;color:var(--nv)!important;border:2px dashed var(--nv3);border-radius:14px;font-size:24px;padding:18px;margin:16px 0}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-secure{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;font-size:13.5px;font-weight:700;color:var(--nv)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-secure svg{width:18px;height:18px;stroke:var(--nv);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #wl-forgot{display:none;margin:6px 0 0;font-size:12.5px;line-height:1.4;color:var(--mut)!important;text-align:center}
+/* Home */
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero{flex:1;display:grid;grid-template-columns:1.1fr 1fr;gap:10px;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:18px 44px 0}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-t h1{margin:0;font-size:clamp(36px,5vw,64px);line-height:1;color:var(--nv)!important;letter-spacing:.3px;font-weight:900;text-shadow:none!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-t h2{margin:8px 0 0;font-size:clamp(24px,2.9vw,38px);line-height:1.12;color:var(--nv)!important;font-weight:800;text-shadow:none!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-t em{display:block;margin:16px 0 8px;font-size:clamp(20px,2.3vw,28px);font-weight:800;color:var(--nv3)!important;font-style:italic}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-t p{margin:0 0 20px;font-size:17px;line-height:1.5;color:var(--ink)!important;max-width:470px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta{display:flex;flex-wrap:wrap;gap:12px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a{display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 24px;border-radius:999px;font-size:15.5px;font-weight:800;text-decoration:none;white-space:nowrap}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a.p{background:linear-gradient(180deg,#5aa2ff,#1f6fe5 55%,#0b57e0)!important;color:#fff!important;box-shadow:0 12px 26px rgba(31,111,229,.5)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a.g{background:#fff!important;color:var(--nv)!important;border:2px solid var(--nv2);box-shadow:0 6px 14px rgba(11,37,69,.12)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a:hover{transform:translateY(-2px)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-a{display:flex;justify-content:center;align-items:center}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-a .wl-art{max-width:540px;max-height:46vh;width:100%;filter:drop-shadow(0 18px 22px rgba(6,25,58,.30))}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feats{flex:0 0 auto;display:grid;grid-template-columns:repeat(3,1fr);width:calc(100% - 88px);max-width:1112px;margin:14px auto 22px;padding:14px 8px;background:rgba(255,255,255,.95)!important;border:1px solid #e0e9f6;border-radius:20px;box-shadow:0 14px 34px rgba(11,37,69,.18)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat{display:flex;align-items:center;gap:12px;padding:4px 24px;border-left:1.5px solid #dbe6f4}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat:first-child{border-left:0}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat svg{flex:0 0 36px;width:36px;height:36px;stroke:var(--nv3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat b{display:block;font-size:15.5px;color:var(--nv)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat span{font-size:13px;color:var(--mut)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-homewrap{flex:1;display:flex;flex-direction:column;width:100%}
+/* shorter screens */
+@media(max-height:760px){
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-top{height:58px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-scene,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-homewrap{min-height:calc(100vh - 58px - var(--wl-bar))}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card{padding:18px 26px 14px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-h .bd{flex-basis:42px;width:42px;height:42px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-h h3{font-size:24px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-sub{margin-bottom:10px}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in{height:40px;margin-top:3px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-grid{gap:8px 14px}html body.wl:is(.dark-mode,:not(.dark-mode)) label.wl-f{margin-bottom:8px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-btn{height:46px;margin-top:10px}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-pan{padding-top:50px;padding-bottom:16px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-pan span{font-size:15px}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-t p{margin-bottom:12px;font-size:15px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a{height:44px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feats{margin:8px auto 14px;padding:8px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-secure{margin-top:8px}
+}
+@media(max-height:620px){html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-a{display:none}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero{grid-template-columns:1fr}}
+/* narrow windows & phones */
+@media(max-width:900px){
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-scene,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-scene.reg{grid-template-columns:1fr;min-height:0}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-art{display:none}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-pan{margin:0;width:100%;border-radius:0 0 40px 40px;padding:22px 24px 24px}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero{grid-template-columns:1fr;padding:18px 22px 0}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-a .wl-art{max-height:240px}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feats{width:calc(100% - 28px)}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a{padding:8px 10px;font-size:13px}
+}
+@media(max-width:720px){
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-top{padding:0 12px;height:58px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-brand small{display:none}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a span{display:none}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a:not(.on):not(.keep){display:none}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-grid{grid-template-columns:1fr}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-R{padding:16px 10px 24px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card{padding:20px 18px}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feats{grid-template-columns:1fr;gap:8px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat{border-left:0}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a{flex:1 1 150px;justify-content:center}
+}
+
+/* ---------- pictures, 3D glass tilt and pointer lights ---------- */
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L.img{padding:16px 6px 16px 16px;display:flex;overflow:visible}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-frame{position:relative;flex:1;overflow:hidden;border-radius:28px;border:1.5px solid rgba(255,255,255,.9);box-shadow:0 26px 60px rgba(15,70,200,.38),0 0 0 6px rgba(255,255,255,.35),inset 0 1px 0 #fff;animation:wlFloat 7s ease-in-out infinite;background:#2f6fe0}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 78%;display:block;transform:scale(1.001);transition:transform .5s ease}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-frame:hover img{transform:scale(1.045)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-frame.top img{object-position:50% 60%}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-a .wl-frame{flex:none;width:100%;max-width:470px;aspect-ratio:1/1.0;max-height:calc(100vh - 66px - 190px - var(--wl-bar))}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-a .wl-frame img{object-position:50% 50%}
+@keyframes wlFloat{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes wlRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-t,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feats{animation:wlRise .7s cubic-bezier(.2,.8,.2,1) both}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-tilt{--mx:50%;--my:50%;--rx:0deg;--ry:0deg;transform:perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .25s ease-out,box-shadow .25s;will-change:transform}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(360px circle at var(--mx) var(--my),rgba(255,255,255,.62),rgba(255,255,255,.14) 38%,transparent 62%);}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-tilt:hover::after{opacity:1}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-tilt::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .25s;z-index:2;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.95),inset 0 0 40px rgba(130,190,255,.55)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-tilt:hover::before{opacity:1}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card.wl-tilt{position:relative}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card.wl-tilt:hover{box-shadow:0 30px 70px rgba(31,111,229,.38),0 0 0 1px rgba(255,255,255,.9),0 0 36px rgba(110,180,255,.55)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-frame.wl-tilt:hover{box-shadow:0 34px 80px rgba(15,70,200,.55),0 0 0 6px rgba(255,255,255,.5),0 0 60px rgba(110,180,255,.7)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-spot{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;transition:opacity .3s;background:radial-gradient(circle,rgba(255,255,255,.55),rgba(150,205,255,.22) 40%,transparent 68%);transform:translate(var(--px,-999px),var(--py,-999px))}
+html body.wl:not(.wl-adm):is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro>*{position:relative;z-index:1}
+html.wl-pointer .wl-spot{opacity:1}
+/* shiny, glowing controls */
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-btn,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a.p{position:relative;overflow:hidden;transition:transform .2s,box-shadow .25s,filter .2s}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-btn::after,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a.p::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent);transition:left .6s}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-btn:hover::after,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a.p:hover::after{left:130%}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-btn:hover,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a.p:hover{transform:translateY(-2px);filter:brightness(1.08) saturate(1.15);box-shadow:0 16px 34px rgba(31,111,229,.65),0 0 26px rgba(110,180,255,.8),inset 0 1px 0 rgba(255,255,255,.7)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-btn:active{transform:translateY(0) scale(.99)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a.g{transition:transform .2s,box-shadow .25s,background .2s}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-cta a.g:hover{background:#fff!important;box-shadow:0 12px 26px rgba(31,111,229,.35),0 0 22px rgba(110,180,255,.7)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a{transition:background .2s,box-shadow .2s,transform .2s}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a:hover{background:rgba(120,180,255,.28)!important;box-shadow:0 0 0 1px rgba(255,255,255,.9),0 6px 18px rgba(31,111,229,.28);transform:translateY(-1px)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a.on:hover{background:linear-gradient(180deg,#6cb0ff,#2f7bff 55%,#0b57e0)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in:hover{border-color:#8fbaf5;box-shadow:0 4px 14px rgba(31,111,229,.18)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in:focus-within{border-color:#2f7bff;box-shadow:0 0 0 3px rgba(47,123,255,.28),0 0 22px rgba(90,170,255,.55)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in>svg{transition:background .2s}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-in:focus-within>svg{background:#dcebff}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feats{transition:box-shadow .25s,transform .25s}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feats:hover{box-shadow:0 18px 44px rgba(31,111,229,.32),0 0 30px rgba(110,180,255,.5)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat{transition:transform .2s}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat:hover{transform:translateY(-3px)}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat svg{transition:filter .2s,stroke .2s}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feat:hover svg{stroke:#1f6fe5;filter:drop-shadow(0 0 8px rgba(80,160,255,.8))}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-t em{background:linear-gradient(90deg,#1f6fe5,#00a6ff,#1f6fe5);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:wlShine 5s linear 2}
+@keyframes wlShine{to{background-position:200% 0}}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L-pan{background:linear-gradient(150deg,#2f7bff 0%,#1650c8 55%,#0b3a9a 100%)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-brand img{transition:transform .3s,filter .3s}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-brand:hover img{transform:rotate(-6deg) scale(1.08);filter:drop-shadow(0 0 10px rgba(80,160,255,.9))!important}
+@media(max-width:900px){
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-L.img{padding:12px 12px 0}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-frame{min-height:230px;max-height:300px;flex:none;height:260px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-frame img{object-position:50% 70%}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-a .wl-frame{max-height:300px}
+}
+@media(max-width:720px){html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-frame{height:210px;min-height:0}}
+@media(prefers-reduced-motion:reduce){
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-frame,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-card,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-t,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-feats,html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-hero-t em{animation:none}
+ html body.wl:not(.wl-adm):is(.dark-mode,:not(.dark-mode))::before,html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox::before{animation:none}
+ html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-tilt{transform:none!important}
+}
+
+/* ===== 1.5.44 hybrid: smooth + remembered-profile card ===== */
+html body.wl .wl-spot{will-change:transform}
+html.wl-paused body.wl::before,html.wl-paused body.wl *,html.wl-paused body.wl *::before,html.wl-paused body.wl *::after{animation-play-state:paused!important}
+html.wl-lite body.wl::before,html.wl-lite body.wl #loginBox::before,html.wl-calm body.wl::before{animation:none!important;will-change:auto}
+html.wl-lite body.wl .wl-spot{display:none!important}
+html.wl-lite body.wl .wl-tilt{transform:none!important;will-change:auto;transition:none}
+html.wl-lite body.wl .wl-tilt::after,html.wl-lite body.wl .wl-tilt::before{display:none}
+html.wl-lite body.wl .wl-card,html.wl-lite body.wl .wl-hero-t,html.wl-lite body.wl .wl-feats,html.wl-lite body.wl .wl-hero-t em{animation:none!important}
+html.wl-calm body.wl .wl-tilt{transform:none!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-prof{text-align:center;margin:0 0 8px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-av{width:88px;height:88px;margin:0 auto 8px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:#fff;border:3px solid #fff;box-shadow:0 12px 26px rgba(31,111,229,.35),inset 0 0 0 1px rgba(11,37,69,.12)}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-av img{width:66px;height:66px;object-fit:contain}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-av img.has-badge{width:100%;height:100%;object-fit:cover}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-prof h3{margin:0;font-size:26px;line-height:1.15;font-weight:800;color:var(--nv)!important;text-shadow:none!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-prof .wl-sub{margin:4px 0 0}
+@media(max-height:760px){html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-av{width:64px;height:64px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-av img{width:48px;height:48px}html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-prof h3{font-size:22px}}
+
+/* school type chooser (register) */
+.wl-type{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:2px 0 10px}
+.wl-type-t{grid-column:1/-1;font-weight:700;font-size:.9rem;opacity:.9}
+.wl-ty{font:inherit;text-align:left;cursor:pointer;border:1.5px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:inherit;border-radius:12px;padding:9px 10px;display:flex;flex-direction:column;gap:2px;transition:.15s}
+.wl-ty b{font-size:.92rem}.wl-ty small{font-size:.72rem;opacity:.8;line-height:1.25}
+.wl-ty:hover:not(:disabled){transform:translateY(-1px);border-color:#60a5fa}
+.wl-ty.on{border-color:#60a5fa;background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;box-shadow:0 6px 18px rgba(37,99,235,.35)}
+.wl-ty.soon,.wl-ty:disabled{opacity:.5;cursor:not-allowed}
+@media(max-width:560px){.wl-type{grid-template-columns:1fr}}
+.wl-type .wl-ty{background:#fff!important;color:#0f172a!important;border:1.5px solid #cbd5e1!important;box-shadow:none!important;text-shadow:none!important;border-radius:12px!important;min-height:0!important;width:auto!important}
+.wl-type .wl-ty.on{background:linear-gradient(135deg,#1e3a8a,#2563eb)!important;color:#fff!important;border-color:#2563eb!important;box-shadow:0 6px 18px rgba(37,99,235,.35)!important}
+.wl-type .wl-ty small{color:inherit!important;opacity:.8}
+.wl-type .wl-ty.soon,.wl-type .wl-ty:disabled{background:#f1f5f9!important;color:#64748b!important;opacity:.75}
+
+/* recover-with-backup (sign in) */
+.wl-alt{width:100%;margin-top:10px;font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;border-radius:12px;padding:10px 12px;display:flex;align-items:center;justify-content:center;gap:8px;background:#fff!important;color:#1e3a8a!important;border:1.5px solid #93c5fd!important;box-shadow:none!important}
+.wl-alt svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+.wl-alt:hover{background:#eff6ff!important}
+.wl-file{display:block;position:relative;border:1.5px dashed #60a5fa;border-radius:12px;background:#f0f7ff;padding:14px 12px;text-align:center;color:#1e3a8a;font-weight:600;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wl-file input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.wl-file:hover{background:#e0efff}

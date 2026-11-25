@@ -1,0 +1,493 @@
+/* IUS AND SONS 1.5.60 — "Navy Aurora" look for Home, Sign In, Register, Recover and Admin sign-in.
+   Visual layer only: loaded after welcome.css, never touches forms, data or scripts. */
+html body.wl:is(.dark-mode,:not(.dark-mode)){
+  --nv:#071636;--ink:#eaf2ff;--mut:#a9bbdd;--ln:rgba(148,197,255,.22);--gold:#f2b01e;--cy:#38bdf8;--ind:#818cf8;
+  background:#040c24!important;color:var(--ink);
+
+  &::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(148,197,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(148,197,255,.05) 1px,transparent 1px);background-size:56px 56px;
+    -webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent 80%);mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent 80%)}
+  #iusPageAfterIntro{position:relative;z-index:1;background:transparent!important}
+  .wl-view,.wl-scene,.wl-homewrap{background:transparent!important}
+
+  /* top bar */
+  .wl-top{background:rgba(6,16,44,.62)!important;-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid rgba(148,197,255,.16)!important;box-shadow:0 10px 40px -18px rgba(0,0,0,.8)!important}
+  .wl-brand{color:#fff!important}.wl-brand b{color:#fff!important}.wl-brand small{color:#a9bbdd!important}
+  .wl-brand img{filter:drop-shadow(0 0 10px rgba(96,165,250,.7))}
+  .wl-nav a{color:#cfe0ff!important;border:1px solid transparent;transition:.18s}
+  .wl-nav a:hover{background:rgba(148,197,255,.14)!important;color:#fff!important}
+  .wl-nav a.on{background:linear-gradient(135deg,#2563eb,#0ea5e9)!important;color:#fff!important;box-shadow:0 8px 24px -6px rgba(14,165,233,.7)!important}
+  .wl-nav svg{stroke:currentColor}
+
+  /* home hero */
+  .wl-hero-t h1{background:linear-gradient(180deg,#fff 20%,#9ec5ff);-webkit-background-clip:text;background-clip:text;color:transparent!important;text-shadow:none;letter-spacing:.01em;filter:drop-shadow(0 6px 30px rgba(56,130,246,.45))}
+  .wl-hero-t h2{color:#fff!important}
+  .wl-hero-t em{background:linear-gradient(90deg,#38bdf8,#a5b4fc 55%,#f2b01e);-webkit-background-clip:text;background-clip:text;color:transparent!important;font-weight:800}
+  .wl-hero-t p{color:#c3d3f0!important}
+  .wl-cta a{transition:transform .18s,box-shadow .18s,background .18s}
+  .wl-cta a.p{background:linear-gradient(135deg,#f2b01e,#f59e0b)!important;color:#1a1200!important;border:0!important;box-shadow:0 14px 34px -10px rgba(245,158,11,.75),inset 0 1px 0 rgba(255,255,255,.5)!important;font-weight:800}
+  .wl-cta a.p:hover{transform:translateY(-2px);box-shadow:0 20px 44px -10px rgba(245,158,11,.9)!important}
+  .wl-cta a.g{background:rgba(148,197,255,.1)!important;color:#fff!important;border:1.5px solid rgba(148,197,255,.45)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  .wl-cta a.g:hover{background:rgba(148,197,255,.22)!important;transform:translateY(-2px)}
+  .wl-cta svg{stroke:currentColor}
+
+  /* art frames */
+  .wl-frame{background:rgba(148,197,255,.1)!important;border:1px solid rgba(180,215,255,.4)!important;box-shadow:0 40px 90px -24px rgba(0,0,0,.85),0 0 0 8px rgba(148,197,255,.07),0 0 100px -10px rgba(56,130,246,.7)!important}
+
+  /* feature strip */
+  .wl-feats{background:rgba(8,20,52,.58)!important;border:1px solid rgba(148,197,255,.22)!important;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 26px 60px -24px rgba(0,0,0,.8)!important}
+  .wl-feat{border-color:rgba(148,197,255,.18)!important}.wl-feat b{color:#fff!important}.wl-feat span{color:#a9bbdd!important}.wl-feat svg{stroke:#7dd3fc!important;color:#7dd3fc}
+
+  /* forms */
+  .wl-card{background:linear-gradient(160deg,rgba(14,32,78,.86),rgba(7,18,48,.9))!important;border:1px solid rgba(148,197,255,.32)!important;color:#eaf2ff!important;-webkit-backdrop-filter:blur(22px) saturate(1.3);backdrop-filter:blur(22px) saturate(1.3);
+    box-shadow:0 40px 90px -26px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.18),0 0 90px -20px rgba(56,130,246,.6)!important}
+  .wl-card h3,.wl-card h2{color:#fff!important}
+  .wl-card .wl-sub,.wl-card p{color:#b7c8e8!important}
+  .wl-card .wl-h .bd{background:linear-gradient(135deg,#2563eb,#0ea5e9)!important;box-shadow:0 10px 26px -6px rgba(14,165,233,.8)!important;color:#fff}
+  .wl-card .wl-f{color:#d6e4ff!important}
+  .wl-card .wl-in{background:rgba(3,10,32,.55)!important;border:1.5px solid rgba(148,197,255,.3)!important;box-shadow:inset 0 2px 8px rgba(0,0,0,.35)!important;transition:.18s}
+  .wl-card .wl-in:focus-within{border-color:#38bdf8!important;box-shadow:0 0 0 4px rgba(56,189,248,.22),inset 0 2px 8px rgba(0,0,0,.35)!important}
+  .wl-card .wl-in svg{stroke:#7dd3fc!important;color:#7dd3fc!important;background:rgba(56,130,246,.14)!important}
+  .wl-card .wl-in input,.wl-card .wl-in select{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff}
+  .wl-card .wl-in input::placeholder{color:#7f95bd!important;-webkit-text-fill-color:#7f95bd}
+  .wl-card .wl-in input:-webkit-autofill{-webkit-text-fill-color:#fff;box-shadow:0 0 0 40px #0b1d4a inset}
+  .wl-card .wl-eye{background:transparent!important;color:#9ec5ff!important}.wl-card .wl-eye svg{background:transparent!important}
+  .wl-card .wl-row,.wl-card .wl-row label{color:#cfe0ff!important}
+  .wl-card a{color:#7dd3fc!important}.wl-card a:hover{color:#fff!important}
+  .wl-card .wl-foot{border-top:1px solid rgba(148,197,255,.2)!important;color:#b7c8e8!important}
+  .wl-card .wl-btn{background:linear-gradient(135deg,#2563eb,#0ea5e9 60%,#22d3ee)!important;color:#fff!important;border:0!important;box-shadow:0 16px 34px -10px rgba(14,165,233,.8),inset 0 1px 0 rgba(255,255,255,.45)!important;transition:transform .18s,box-shadow .18s}
+  .wl-card .wl-btn:hover{transform:translateY(-2px);box-shadow:0 22px 44px -10px rgba(14,165,233,.95),inset 0 1px 0 rgba(255,255,255,.5)!important}
+  .wl-card .msg{color:#fca5a5!important}
+  .wl-card #wl-forgot{color:#a9bbdd!important}
+  .wl-card .wl-av{background:rgba(148,197,255,.12)!important;border:1px solid rgba(148,197,255,.4)!important}
+  .wl-card .wl-prof h3{color:#fff!important}
+
+  /* school type chooser, recover button, file picker */
+  .wl-type .wl-ty{background:rgba(148,197,255,.1)!important;color:#e4efff!important;border:1.5px solid rgba(148,197,255,.32)!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .wl-type .wl-ty:hover:not(:disabled){border-color:#38bdf8!important;background:rgba(56,189,248,.16)!important}
+  .wl-type .wl-ty.on{background:linear-gradient(135deg,#2563eb,#0ea5e9)!important;color:#fff!important;border-color:#7dd3fc!important;box-shadow:0 10px 26px -8px rgba(14,165,233,.85)!important}
+  .wl-type .wl-ty.soon,.wl-type .wl-ty:disabled{background:rgba(148,163,184,.1)!important;color:#8da0c4!important;opacity:.7}
+  .wl-type-t{color:#dbe8ff}
+  .wl-alt{background:rgba(148,197,255,.1)!important;color:#bfe0ff!important;border:1.5px solid rgba(148,197,255,.4)!important}
+  .wl-alt:hover{background:rgba(148,197,255,.22)!important;color:#fff!important}
+  .wl-file{background:rgba(3,10,32,.5)!important;border:1.5px dashed rgba(125,211,252,.6)!important;color:#d6e8ff!important}
+  .wl-file:hover{background:rgba(56,189,248,.14)!important}
+
+  /* pointer light */
+  .wl-spot{mix-blend-mode:screen}
+}
+html body.wl:not(.wl-adm):is(.dark-mode,:not(.dark-mode))::before,html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox::before{background:radial-gradient(38% 34% at 18% 22%,rgba(37,99,235,.55),transparent 70%),radial-gradient(34% 32% at 82% 18%,rgba(34,211,238,.22),transparent 70%),radial-gradient(40% 36% at 78% 82%,rgba(99,102,241,.4),transparent 70%),radial-gradient(30% 28% at 20% 85%,rgba(14,116,144,.3),transparent 70%),linear-gradient(180deg,#071a46,#040c24)!important;animation:wlAurora 16s ease-in-out infinite alternate}
+@keyframes wlAurora{from{transform:translate3d(-2%,-1%,0) scale(1)}to{transform:translate3d(2%,2%,0) scale(1.08)}}
+html.wl-lite body.wl::before,html.wl-calm body.wl::before,html.wl-paused body.wl::before{animation:none}
+@media print{body.wl::before,body.wl::after{display:none}}
+/* 1.5.62: no pointer light (the glow that followed the mouse). The shine on the cards stays. */
+html body.wl .wl-spot{display:none!important}
+
+/* 1.5.64 — picture panels replaced by clean built-in panels (no photos) */
+html body.wl .wp{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:clamp(22px,4vw,44px);color:#eaf2ff;background:linear-gradient(160deg,rgba(30,64,140,.55),rgba(8,22,56,.85))}
+html body.wl .wp-logo{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+html body.wl .wp h3{margin:6px 0 0;font-size:clamp(26px,3vw,38px);font-weight:800;color:#fff;line-height:1.1}
+html body.wl .wp>p{margin:0 0 8px;font-size:16px;line-height:1.45;color:#b9cdee;max-width:420px}
+html body.wl .wp ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:12px}
+html body.wl .wp li{display:flex;gap:14px;align-items:center;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(160,200,255,.18)}
+html body.wl .wp li i{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:800;color:#fff;background:linear-gradient(135deg,#2f7bff,#22c3ee)}
+html body.wl .wp li b{display:block;color:#fff;font-size:15px}html body.wl .wp li span{display:block;color:#a9c0e6;font-size:13px;margin-top:2px}
+html body.wl .wp-rc{justify-content:flex-start;gap:14px;background:linear-gradient(160deg,rgba(255,255,255,.97),rgba(226,236,255,.95));color:#0f2552}
+html body.wl .wp-rc .rc-top{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;margin:-4px -4px 0;border-radius:12px;background:linear-gradient(135deg,#1d4ed8,#1e3a8a);color:#fff}
+html body.wl .wp-rc .rc-top b{font-size:17px}html body.wl .wp-rc .rc-top span{font-size:12px;opacity:.85}
+html body.wl .wp-rc .rc-stu{display:flex;gap:12px;align-items:center}html body.wl .wp-rc .rc-stu i{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#93b8ff,#2f6fe0)}
+html body.wl .wp-rc .rc-stu b{display:block;font-size:16px}html body.wl .wp-rc .rc-stu span{font-size:12.5px;color:#4a5f8a}
+html body.wl .wp-rc table{width:100%;border-collapse:collapse;font-size:14px}
+html body.wl .wp-rc th{background:#dbe7ff;color:#1e3a8a;text-align:left;padding:8px 10px;font-size:12px}
+html body.wl .wp-rc td{padding:8px 10px;border-bottom:1px solid #d3def5}
+html body.wl .wp-rc em{font-style:normal;font-weight:800;color:#1d4ed8;background:#e0eaff;padding:2px 9px;border-radius:99px;font-size:12px}
+html body.wl .wp-rc .rc-bars{flex:1;min-height:50px;display:flex;align-items:flex-end;gap:10px;padding:8px 6px 0;border-top:1px dashed #b8c9ee}
+html body.wl .wp-rc .rc-bars span{flex:1;height:var(--h);border-radius:6px 6px 0 0;background:linear-gradient(180deg,#3b82f6,#1d4ed8)}
+@media(max-width:720px){html body.wl .wp li span{display:none}html body.wl .wp-rc .rc-bars{display:none}}
+html body.wl .wl-frame .wp-logo{position:static!important;inset:auto!important;width:64px!important;height:64px!important;object-fit:contain!important;transform:none!important}
+@media(max-width:720px){html body.wl .wl-scene .wl-L.img{display:none!important}}
+
+/* 1.5.65b — decorative vector art */
+html body.wl .wp{overflow:hidden}
+html body.wl .wp>*{position:relative;z-index:1}
+html body.wl .wp .wp-art{position:absolute;z-index:0;right:14px;bottom:10px;width:min(78%,360px);height:auto;opacity:.9;pointer-events:none}
+html body.wl .wp .wp-ring{position:absolute;z-index:0;border-radius:50%;border:1.5px solid rgba(160,200,255,.22);pointer-events:none}
+html body.wl .wp .r1{width:260px;height:260px;right:-90px;top:-90px;box-shadow:0 0 0 26px rgba(160,200,255,.05)}
+html body.wl .wp .r2{width:120px;height:120px;left:-40px;bottom:30%;border-color:rgba(124,240,201,.25)}
+html body.wl .wp ul{margin-bottom:120px}
+html body.wl .wl-hero-a{position:relative}
+html body.wl .wl-chip{position:absolute;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;color:#fff;background:rgba(14,34,84,.82);border:1px solid rgba(160,200,255,.35);box-shadow:0 18px 40px -12px rgba(0,0,0,.7);backdrop-filter:blur(8px);animation:wlChip 6s ease-in-out infinite}
+html body.wl .wl-chip b{display:block;font-size:14px}html body.wl .wl-chip span{display:block;font-size:12px;color:#aac4ee}
+html body.wl .wl-chip i{font-style:normal;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ffc83d,#ff9f1c);color:#3a2500;font-size:16px}
+html body.wl .wl-chip svg{width:44px;height:24px}html body.wl .wl-chip.c3 svg{width:36px;height:36px}
+html body.wl .wl-chip.c1{left:-10%;top:-3%}html body.wl .wl-chip.c2{right:-13%;top:52%;animation-delay:-2s}html body.wl .wl-chip.c3{left:-8%;bottom:6%;animation-delay:-4s}
+@keyframes wlChip{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(max-width:1100px){html body.wl .wl-chip.c1{left:0}html body.wl .wl-chip.c2{right:0}html body.wl .wl-chip.c3{left:0}}
+@media(max-width:720px){html body.wl .wl-chip{display:none}html body.wl .wp .wp-art{display:none}}
+@media(prefers-reduced-motion:reduce){html body.wl .wl-chip{animation:none}}
+
+/* 1.5.67 — mascot pulling the form card */
+html body.wl .wl-scene{position:relative}
+html body.wl .wp ul{margin-bottom:0;max-width:64%}html body.wl .wp>p{max-width:64%}
+html body.wl .wp .wp-mascot{position:absolute;z-index:1;right:6px;bottom:2px;width:min(40%,210px);height:auto;overflow:visible;pointer-events:none;filter:drop-shadow(0 14px 18px rgba(0,0,0,.4))}
+html body.wl .wp .m-bob{animation:mBob 3.6s ease-in-out infinite}
+html body.wl .wp .m-body{transform-origin:100px 270px;transform:rotate(var(--lean,0deg))}
+html body.wl .wp .m-effort,html body.wl .wp .m-sweat{display:none}
+html body.wl .wp .eff .m-smile{display:none}html body.wl .wp .eff .m-effort,html body.wl .wp .eff .m-sweat{display:block}
+html body.wl .wp .eff .m-eyes{transform:scaleY(.45);transform-origin:100px 80px}
+html body.wl .wp .m-eyes{animation:mBlink 5s infinite;transform-origin:100px 80px}
+@keyframes mBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes mBlink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+html body.wl .wp-rope{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:6}
+html body.wl .wp-rope .rp{stroke:#ffc83d;stroke-width:4;stroke-linecap:round}
+html body.wl .wp-rope .rp-shadow{stroke:rgba(0,0,0,.35);stroke-width:7;stroke-linecap:round;transform:translateY(3px)}
+html body.wl .wp-rope .rp-knot{fill:#ffc83d;stroke:#b8860b;stroke-width:2}
+@media(max-width:720px){html body.wl .wp-rope{display:none}}
+@media(prefers-reduced-motion:reduce){html body.wl .wp .m-bob,html body.wl .wp .m-eyes{animation:none}}
+
+/* 1.5.70 — split-screen layout: art panel (left, diagonal edge) + light form sheet (right) */
+html body.wl.wl .wl-scene{background:#f6f8ff!important;position:relative}
+html body.wl.wl .wl-scene>.wl-L{order:1}html body.wl.wl .wl-scene>.wl-R{order:2}
+html body.wl.wl .wl-scene>.wl-R{background:transparent;display:flex;align-items:center;justify-content:center}
+html body.wl.wl .wl-scene>.wl-L.img{padding:0;display:block;align-self:stretch;position:relative;z-index:2;display:block!important}
+html body.wl.wl .wl-scene .wl-frame:has(.wp){position:relative;width:100%;max-width:none;height:100%;min-height:100%;border:0!important;border-radius:0!important;box-shadow:none!important;background:linear-gradient(140deg,#06173f 0%,#0a2766 52%,#1f2f9a 100%)!important;overflow:visible;transform:none!important}
+html body.wl.wl .wl-scene .wp{background:none;color:#fff;align-items:flex-start;text-align:left;justify-content:flex-start;padding:clamp(28px,5vh,56px) clamp(24px,4vw,56px);gap:10px;overflow:visible}
+html body.wl.wl .wl-scene .wp::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 45% at 25% 85%,rgba(96,140,255,.35),transparent 70%),radial-gradient(40% 30% at 85% 10%,rgba(139,92,246,.35),transparent 70%);pointer-events:none}
+html body.wl.wl .wl-scene .wp h3{color:#fff!important;font-size:clamp(28px,3vw,42px)}
+html body.wl.wl .wl-scene .wp>p{color:#bcd0f5!important;max-width:380px;margin-left:0}
+html body.wl.wl .wl-scene .wp ul,html body.wl.wl .wl-scene .wp .wp-ring{display:none}
+html body.wl.wl .wl-scene .wp-logo{align-self:flex-start}
+html body.wl.wl .wl-scene .wp .wp-mascot{transform:none;left:9%;right:auto;bottom:0;width:min(50%,300px);filter:drop-shadow(0 16px 20px rgba(0,0,0,.45))}
+html body.wl.wl .wl-scene .wp-float{position:absolute;z-index:1;border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.09);border:1px solid rgba(190,210,255,.35);backdrop-filter:blur(10px);box-shadow:0 18px 40px -14px rgba(0,0,0,.6);animation:wlChip 6s ease-in-out infinite;color:#dfe9ff;font-size:12px;pointer-events:none}
+html body.wl.wl .wl-scene .wp-float.f1{right:24%;top:46%;width:150px}
+html body.wl.wl .wl-scene .wp-float.f2{right:12%;top:62%;animation-delay:-3s;display:flex;align-items:center;gap:8px;font-weight:700}
+html body.wl.wl .wl-scene .wp-float i{display:block;height:7px;border-radius:4px;margin:6px 0;background:linear-gradient(90deg,#7aa7ff,#a78bfa)}
+html body.wl.wl .wl-scene .wp-float b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#34d399,#10b981);color:#fff;font-size:14px}
+html body.wl.wl .wl-scene .wp-rope{z-index:6}
+/* light form card */
+html body.wl.wl .wl-scene .wl-card{background:#fff!important;border:1px solid #e3e9f7!important;color:#12275a!important;box-shadow:0 24px 60px -24px rgba(30,64,140,.35)!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+html body.wl.wl .wl-scene .wl-card h3,html body.wl.wl .wl-scene .wl-card h2,html body.wl.wl .wl-scene .wl-card .wl-prof h3{color:#0f1f4d!important}
+html body.wl.wl .wl-scene .wl-card .wl-sub,html body.wl.wl .wl-scene .wl-card p{color:#5a6c92!important}
+html body.wl.wl .wl-scene .wl-card .wl-f{color:#2a3f73!important}
+html body.wl.wl .wl-scene .wl-card .wl-in{background:#f4f6fc!important;border:1.5px solid #dfe5f4!important;box-shadow:none!important}
+html body.wl.wl .wl-scene .wl-card .wl-in:focus-within{border-color:#4f6ef7!important;box-shadow:0 0 0 4px rgba(79,110,247,.15)!important;background:#fff!important}
+html body.wl.wl .wl-scene .wl-card .wl-in svg{stroke:#4f6ef7!important;color:#4f6ef7!important;background:transparent!important}
+html body.wl.wl .wl-scene .wl-card .wl-in input,html body.wl.wl .wl-scene .wl-card .wl-in select{color:#0f1f4d!important;-webkit-text-fill-color:#0f1f4d}
+html body.wl.wl .wl-scene .wl-card .wl-in input::placeholder{color:#9aa8c7!important;-webkit-text-fill-color:#9aa8c7}
+html body.wl.wl .wl-scene .wl-card .wl-in input:-webkit-autofill{-webkit-text-fill-color:#0f1f4d;box-shadow:0 0 0 40px #f4f6fc inset}
+html body.wl.wl .wl-scene .wl-card .wl-eye,html body.wl.wl .wl-scene .wl-card .wl-eye svg{background:transparent!important;color:#6b7fae!important;stroke:#6b7fae!important}
+html body.wl.wl .wl-scene .wl-card .wl-row,html body.wl.wl .wl-scene .wl-card .wl-row label{color:#3a4f82!important}
+html body.wl.wl .wl-scene .wl-card a{color:#3b5bdb!important}html body.wl.wl .wl-scene .wl-card a:hover{color:#1d3aa8!important}
+html body.wl.wl .wl-scene .wl-card #wl-forgot{color:#3b5bdb!important}
+html body.wl.wl .wl-scene .wl-card .wl-foot{border-top:1px solid #e6ebf7!important;color:#5a6c92!important}
+html body.wl.wl .wl-scene .wl-card .wl-btn{background:linear-gradient(90deg,#3b6cf6,#7a5cf5)!important;color:#fff!important;box-shadow:0 14px 30px -12px rgba(79,92,245,.7)!important}
+html body.wl.wl .wl-scene .wl-card .wl-h .bd{background:linear-gradient(135deg,#3b6cf6,#7a5cf5)!important;box-shadow:0 10px 24px -8px rgba(79,92,245,.6)!important}
+html body.wl.wl .wl-scene .wl-card .msg{color:#d12f4a!important}
+html body.wl.wl .wl-scene .wl-card .wl-av{background:#eef2ff!important;border:1px solid #cfd8f5!important}
+html body.wl.wl .wl-scene .wl-card .wl-alt{background:#f4f6fc!important;color:#2d44a0!important;border:1.5px solid #dbe2f5!important}
+html body.wl.wl .wl-scene .wl-card .wl-alt:hover{background:#e9eefc!important;color:#1d3aa8!important}
+html body.wl.wl .wl-scene .wl-card .wl-type-t{color:#2a3f73}
+html body.wl.wl .wl-scene .wl-card .wl-type .wl-ty{background:#f4f6fc!important;color:#12275a!important;border:1.5px solid #dfe5f4!important;backdrop-filter:none}
+html body.wl.wl .wl-scene .wl-card .wl-type .wl-ty small,html body.wl.wl .wl-scene .wl-card .wl-type .wl-ty span{color:#5a6c92}
+html body.wl.wl .wl-scene .wl-card .wl-type .wl-ty:hover:not(:disabled){border-color:#4f6ef7!important;background:#eef2ff!important}
+html body.wl.wl .wl-scene .wl-card .wl-type .wl-ty.on{background:linear-gradient(135deg,#3b6cf6,#7a5cf5)!important;color:#fff!important;border-color:transparent!important}
+html body.wl.wl .wl-scene .wl-card .wl-type .wl-ty.on small,html body.wl.wl .wl-scene .wl-card .wl-type .wl-ty.on span{color:#e4e9ff}
+html body.wl.wl .wl-scene .wl-card .wl-type .wl-ty.soon,html body.wl.wl .wl-scene .wl-card .wl-type .wl-ty:disabled{background:#f1f3f9!important;color:#9aa6c2!important;opacity:.8}
+@media(min-width:901px){
+ html body.wl.wl .wl-scene>.wl-L.img .wl-frame{clip-path:polygon(0 0,100% 0,84% 100%,0 100%)}
+ html body.wl.wl .wl-scene{grid-template-columns:1.08fr 1fr}html body.wl.wl .wl-scene.reg{grid-template-columns:1fr 1.05fr}
+ html body.wl.wl .wl-scene>.wl-R{padding-left:0}
+}
+@media(max-width:900px){
+ html body.wl.wl .wl-scene{display:block;min-height:0;background:#f6f8ff!important}
+ html body.wl.wl .wl-scene>.wl-L.img{height:250px}
+ html body.wl.wl .wl-scene .wl-frame:has(.wp){height:250px;min-height:250px}
+ html body.wl.wl .wl-scene .wp{padding:20px 20px}
+ html body.wl.wl .wl-scene .wp>p,html body.wl.wl .wl-scene .wp-float,html body.wl.wl .wl-scene .wp-rope{display:none!important}
+ html body.wl.wl .wl-scene .wp h3{font-size:22px;margin:2px 0 0}
+ html body.wl.wl .wl-scene .wp-logo{width:44px!important;height:44px!important}
+ html body.wl.wl .wl-scene .wp .wp-mascot{left:auto;right:12px;width:150px}
+ html body.wl.wl .wl-scene>.wl-R{display:block;background:#f6f8ff!important;border-radius:26px 26px 0 0;margin-top:-24px;position:relative;z-index:3;padding:18px 14px 26px}
+ html body.wl.wl .wl-scene .wl-card{margin:0 auto}
+}
+@media(prefers-reduced-motion:reduce){html body.wl .wp-float{animation:none}}
+
+/* ===== 1.5.72 — Unified IUS AND SONS visual redesign ===== */
+html body.wl:is(.dark-mode,:not(.dark-mode)){
+  background:#040b24!important;
+  --ius-blue:#2563eb; --ius-cyan:#38bdf8; --ius-purple:#7c3aed;
+}
+
+/* HOME: one complete visual composition — the man, branding, words and navigation belong to one design */
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-homewrap{
+  min-height:calc(100vh - var(--wl-bar) - 66px);
+  background:#03091f!important;
+  position:relative;
+  overflow:hidden;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero{
+  position:relative;
+  width:100%; max-width:none; margin:0; padding:0 5vw;
+  min-height:calc(100vh - var(--wl-bar) - 66px);
+  display:flex; align-items:center;
+  background-image:
+    linear-gradient(90deg,rgba(3,8,30,.98) 0%,rgba(3,8,30,.90) 30%,rgba(3,8,30,.30) 55%,rgba(3,8,30,.05) 100%),
+    url('ius-system-guy-hero.webp');
+  background-size:cover;
+  background-position:center;
+  box-sizing:border-box;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg,rgba(38,99,235,.20),transparent 35%,rgba(124,58,237,.20));
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero-t{
+  position:relative;z-index:3;max-width:560px;padding:24px 0 42px;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero-t h1{
+  color:#fff!important;font-size:clamp(42px,6vw,78px);font-weight:900;letter-spacing:.03em;
+  text-shadow:0 10px 40px rgba(0,0,0,.45);margin:0;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero-t h2{
+  color:#dce9ff!important;font-size:clamp(25px,3vw,40px);line-height:1.1;margin:8px 0 0;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero-t em{
+  display:block;margin:18px 0 10px;color:#7dd3fc!important;background:none!important;
+  -webkit-text-fill-color:initial;font-size:clamp(19px,2vw,27px);font-style:italic;font-weight:800;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero-t p{
+  color:#c6d7f5!important;max-width:500px;font-size:16px;line-height:1.55;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-cta{gap:12px}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-cta a{
+  height:48px;padding:0 21px;border-radius:14px;font-size:14px;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-cta a.p{
+  background:linear-gradient(135deg,#2563eb,#7c3aed)!important;color:#fff!important;
+  box-shadow:0 16px 38px -14px rgba(79,70,229,.9)!important;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-cta a.g{
+  background:rgba(7,17,47,.48)!important;color:#fff!important;
+  border:1px solid rgba(148,197,255,.38)!important;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero-a,
+html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-feats{display:none!important}
+
+/* compact glass navigation, still part of the same visual */
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-top{
+  position:absolute!important;left:0;right:0;top:var(--wl-bar);z-index:10;
+  background:rgba(3,8,30,.48)!important;border-bottom:1px solid rgba(148,197,255,.18)!important;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-brand b{color:#fff!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-brand small{color:#b8c9e9!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a{color:#dce9ff!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a:hover{background:rgba(96,165,250,.16)!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) .wl-nav a.on{background:linear-gradient(135deg,#2563eb,#7c3aed)!important;color:#fff!important}
+
+/* ALL FORMS: one consistent visual language, same man/scene, different real form content */
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene{
+  background:#050c24!important;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene>.wl-L.img{
+  background-image:
+    linear-gradient(90deg,rgba(3,8,30,.12),rgba(3,8,30,.22)),
+    url('ius-system-guy-hero.webp')!important;
+  background-size:cover!important;background-position:center!important;
+  min-height:100%;position:relative;overflow:hidden;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene>.wl-L.img::after{
+  content:"IUS AND SONS\A School Management System";white-space:pre;
+  position:absolute;left:clamp(28px,5vw,72px);top:clamp(28px,8vh,80px);
+  color:#fff;font-weight:900;font-size:clamp(25px,3.2vw,44px);line-height:1.05;
+  letter-spacing:.02em;text-shadow:0 10px 34px rgba(0,0,0,.5);
+  max-width:360px;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene>.wl-L.img::before{
+  content:"Simple. Reliable. Professional.";white-space:pre;
+  position:absolute;left:clamp(28px,5vw,72px);top:calc(clamp(28px,8vh,80px) + clamp(90px,9vw,145px));
+  color:#7dd3fc;font-size:clamp(14px,1.5vw,19px);font-weight:800;font-style:italic;
+  z-index:3;text-shadow:0 8px 25px rgba(0,0,0,.45);
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene>.wl-L.img .wl-frame,
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene>.wl-L.img .wp{display:none!important}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene>.wl-R{
+  background:#f6f8ff!important;position:relative;z-index:4;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene .wl-card{
+  max-width:500px;border-radius:24px!important;background:rgba(255,255,255,.97)!important;
+  box-shadow:0 28px 80px -30px rgba(22,38,95,.55)!important;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene .wl-card .wl-h .bd{
+  background:linear-gradient(135deg,#2563eb,#7c3aed)!important;
+}
+html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene .wl-card .wl-btn{
+  background:linear-gradient(90deg,#2563eb,#7c3aed)!important;
+}
+
+@media(max-width:900px){
+  html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero{
+    min-height:calc(100vh - var(--wl-bar));padding:110px 24px 38px;
+    background-position:62% center;
+  }
+  html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero-t{max-width:620px}
+  html body.wl:is(.dark-mode,:not(.dark-mode)) #iusPageAfterIntro .wl-hero-t h1{font-size:46px}
+  html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene>.wl-L.img{min-height:300px;height:300px}
+  html body.wl:is(.dark-mode,:not(.dark-mode)) #loginBox .wl-scene>.wl-R{margin-top:-22px;border-radius:24px 24px 0 0}
+}
+/* 1.5.72 — unified IUS AND SONS man-with-laptop visual design */
+:root{--ius-navy:#050b20;--ius-blue:#2358ff;--ius-violet:#8b5cf6;--ius-cyan:#35bdf5}
+
+/* HOME — one complete visual composition */
+html body.wl.wl-home .wl-page-after-intro,html body.wl.wl-home .ius-page-after-intro{background:#030817!important}
+html body.wl.wl-home .wl-top{position:absolute!important;z-index:20;top:0;left:0;right:0;background:rgba(3,8,23,.52)!important;border-bottom:1px solid rgba(150,190,255,.18)!important;backdrop-filter:blur(12px)}
+html body.wl.wl-home .wl-brand{display:none!important}
+html body.wl.wl-home .wl-nav{margin-left:auto!important}
+html body.wl.wl-home .wl-nav a{color:#dce7ff!important;border-color:transparent!important;background:transparent!important}
+html body.wl.wl-home .wl-nav a:hover,html body.wl.wl-home .wl-nav a.on{color:#fff!important;background:rgba(65,105,255,.16)!important;border-color:rgba(120,160,255,.25)!important}
+html body.wl.wl-home .wl-view{min-height:100vh!important;background:#030817!important}
+html body.wl.wl-home .wl-homewrap{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:stretch;background:linear-gradient(90deg,#030817 0%,#06132e 42%,rgba(6,19,46,.75) 57%,rgba(6,19,46,.15) 72%,#030817 100%)!important}
+html body.wl.wl-home .wl-homewrap:after{content:"";position:absolute;z-index:0;inset:0 0 0 37%;background:url('ius-system-guy-hero.webp') center right/cover no-repeat;mask-image:linear-gradient(90deg,transparent 0%,#000 18%,#000 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 18%,#000 100%);opacity:.98}
+html body.wl.wl-home .wl-homewrap:before{content:"";position:absolute;z-index:1;inset:0;background:radial-gradient(45% 65% at 52% 48%,rgba(45,91,255,.20),transparent 70%),linear-gradient(90deg,rgba(3,8,23,.96) 0%,rgba(3,8,23,.78) 37%,rgba(3,8,23,.12) 66%,rgba(3,8,23,.18) 100%);pointer-events:none}
+html body.wl.wl-home .wl-hero{position:relative;z-index:3;display:flex!important;align-items:center!important;width:100%!important;max-width:none!important;min-height:100vh!important;padding:96px 7vw 50px!important;margin:0!important}
+html body.wl.wl-home .wl-hero-t{width:min(560px,48vw)!important;display:block!important;color:#fff!important}
+html body.wl.wl-home .wl-hero-t h1{font-size:clamp(42px,6vw,78px)!important;line-height:.95!important;letter-spacing:.02em!important;color:#fff!important;background:linear-gradient(180deg,#fff,#9fc2ff 70%,#638dff)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;filter:drop-shadow(0 10px 35px rgba(44,103,255,.34))!important}
+html body.wl.wl-home .wl-hero-t h2{margin-top:18px!important;font-size:clamp(23px,3vw,38px)!important;color:#dce8ff!important;line-height:1.08!important}
+html body.wl.wl-home .wl-hero-t em,html body.wl.wl-home .wl-hero-t p{display:none!important}
+html body.wl.wl-home .wl-cta{display:flex!important;gap:14px!important;margin-top:34px!important;flex-wrap:wrap!important}
+html body.wl.wl-home .wl-cta a{min-width:190px!important;height:52px!important;border-radius:16px!important;font-weight:800!important;justify-content:center!important}
+html body.wl.wl-home .wl-cta a.p{background:linear-gradient(100deg,#2e65ff,#8b5cf6)!important;border:1px solid rgba(255,255,255,.2)!important;box-shadow:0 16px 38px rgba(59,92,255,.34)!important;color:#fff!important}
+html body.wl.wl-home .wl-cta a.g:nth-of-type(1){display:none!important}
+html body.wl.wl-home .wl-cta a.g:nth-of-type(2){display:flex!important;background:rgba(7,16,42,.66)!important;border:1px solid rgba(156,187,255,.5)!important;color:#fff!important;box-shadow:0 12px 32px rgba(0,0,0,.22)!important}
+html body.wl.wl-home .wl-hero-a,html body.wl.wl-home .wl-feats{display:none!important}
+
+/* FORMS — one consistent visual system, same man and same system logo */
+html body.wl.wl-auth .wl-top,html body.wl.wl-adm .wl-top{background:rgba(3,8,23,.9)!important;border-bottom:1px solid rgba(132,166,255,.2)!important}
+html body.wl.wl-auth .wl-scene,html body.wl.wl-adm .wl-scene{background:#040a1d!important;min-height:calc(100vh - 66px)!important;overflow:hidden!important}
+html body.wl.wl-auth .wl-scene>.wl-L.img,html body.wl.wl-adm .wl-scene>.wl-L.img{background:#040a1d!important;padding:0!important;display:block!important}
+html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame{width:100%!important;height:100%!important;min-height:100%!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important;background:url('ius-system-guy-hero.webp') center/cover no-repeat!important;position:relative!important;overflow:hidden!important}
+html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame:after,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame:after{content:"IUS AND SONS\A School Results Management System";white-space:pre;position:absolute;left:42px;top:42px;color:#fff;font-size:clamp(26px,3vw,42px);font-weight:900;line-height:1.08;letter-spacing:.01em;text-shadow:0 8px 30px rgba(0,0,0,.45);z-index:3;max-width:520px}
+html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame:before,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,8,23,.62) 0%,rgba(3,8,23,.05) 38%,rgba(3,8,23,.05) 64%,rgba(3,8,23,.68) 100%);z-index:2;pointer-events:none}
+html body.wl.wl-auth .wl-scene .wp,html body.wl.wl-adm .wl-scene .wp{display:none!important}
+html body.wl.wl-auth .wl-scene>.wl-R,html body.wl.wl-adm .wl-scene>.wl-R{background:linear-gradient(90deg,#06112e,#f7f9ff 18%)!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:42px!important}
+html body.wl.wl-auth .wl-scene .wl-card,html body.wl.wl-adm .wl-scene .wl-card{width:min(620px,100%)!important;background:rgba(255,255,255,.98)!important;border:1px solid #e0e7f7!important;border-radius:28px!important;box-shadow:0 30px 90px -30px rgba(20,50,130,.5)!important;transform:none!important;padding:30px!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-h h3,html body.wl.wl-adm .wl-scene .wl-card .wl-h h3{font-size:28px!important;color:#0c1b42!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-sub,html body.wl.wl-adm .wl-scene .wl-card .wl-sub{color:#60719a!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-in,html body.wl.wl-adm .wl-scene .wl-card .wl-in{background:#f5f7fc!important;border:1px solid #dce4f5!important;border-radius:14px!important;min-height:48px!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-in:focus-within,html body.wl.wl-adm .wl-scene .wl-card .wl-in:focus-within{border-color:#4b69f6!important;box-shadow:0 0 0 4px rgba(75,105,246,.12)!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-btn,html body.wl.wl-adm .wl-scene .wl-card .wl-btn{height:50px!important;border-radius:14px!important;background:linear-gradient(100deg,#2f67ff,#8b5cf6)!important;box-shadow:0 15px 35px -14px rgba(70,90,245,.75)!important;font-weight:800!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-h .bd,html body.wl.wl-adm .wl-scene .wl-card .wl-h .bd{background:linear-gradient(135deg,#2f67ff,#8b5cf6)!important;border-radius:13px!important}
+html body.wl.wl-auth .wl-scene .wl-card a,html body.wl.wl-adm .wl-scene .wl-card a{color:#3558d8!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-type .wl-ty.on{background:linear-gradient(135deg,#2f67ff,#8b5cf6)!important}
+
+@media(max-width:900px){
+ html body.wl.wl-home .wl-homewrap:after{inset:30% 0 0 0;mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 100%)}
+ html body.wl.wl-home .wl-hero{padding:110px 28px 300px!important;align-items:flex-start!important}
+ html body.wl.wl-home .wl-hero-t{width:100%!important;max-width:600px!important}
+ html body.wl.wl-home .wl-hero-t h1{font-size:52px!important}
+ html body.wl.wl-auth .wl-scene,html body.wl.wl-adm .wl-scene{display:block!important}
+ html body.wl.wl-auth .wl-scene>.wl-L.img,html body.wl.wl-adm .wl-scene>.wl-L.img{height:360px!important}
+ html body.wl.wl-auth .wl-scene>.wl-R,html body.wl.wl-adm .wl-scene>.wl-R{padding:22px 14px!important;background:#f7f9ff!important;margin-top:-24px!important;position:relative!important;z-index:5!important;border-radius:26px 26px 0 0!important}
+ html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame{min-height:360px!important}
+ html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame:after,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame:after{left:22px;top:26px;font-size:25px}
+}
+
+/* 1.5.73 — unified cinematic IUS AND SONS visual system
+   The Home and authentication pages share one complete composition. */
+html body.wl:is(.dark-mode,:not(.dark-mode)){
+  --ius-blue:#2d6bff;--ius-violet:#8a4dff;--ius-navy:#030817;--ius-line:rgba(152,188,255,.22);
+}
+
+/* HOME: the whole screen is one designed composition, not a photo beside a page. */
+html body.wl.wl-home .wl-top{
+  padding-right:150px!important;
+  min-height:74px!important;
+  background:rgba(2,7,24,.72)!important;
+  border-bottom:1px solid rgba(135,177,255,.20)!important;
+  backdrop-filter:blur(18px)!important;
+}
+html body.wl.wl-home .wl-brand{display:flex!important;align-items:center!important;gap:10px!important;position:absolute!important;left:28px!important;top:13px!important;z-index:5!important}
+html body.wl.wl-home .wl-brand img{width:40px!important;height:40px!important;border-radius:11px!important;object-fit:cover!important}
+html body.wl.wl-home .wl-brand b{font-size:15px!important;letter-spacing:.08em!important}
+html body.wl.wl-home .wl-brand small{display:block!important;color:#a9bde5!important;font-size:9px!important;letter-spacing:.12em!important}
+html body.wl.wl-home .wl-nav{margin-left:auto!important;gap:5px!important;display:flex!important;align-items:center!important}
+html body.wl.wl-home .wl-nav a{height:42px!important;padding:0 13px!important;border-radius:13px!important;display:flex!important;align-items:center!important;gap:7px!important;white-space:nowrap!important;font-size:11px!important;font-weight:800!important;letter-spacing:.01em!important}
+html body.wl.wl-home .wl-nav svg{width:17px!important;height:17px!important;stroke-width:1.8!important}
+html body.wl.wl-home .wl-homewrap{background:#020719!important}
+html body.wl.wl-home .wl-homewrap:after{inset:0!important;background:url('ius-system-guy-hero.webp') center right/cover no-repeat!important;opacity:1!important;mask-image:linear-gradient(90deg,transparent 0%,transparent 10%,#000 37%,#000 100%)!important;-webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 10%,#000 37%,#000 100%)!important}
+html body.wl.wl-home .wl-homewrap:before{inset:0!important;background:linear-gradient(90deg,rgba(2,7,23,1) 0%,rgba(2,7,23,.94) 30%,rgba(2,7,23,.58) 48%,rgba(2,7,23,.10) 72%,rgba(2,7,23,.25) 100%),radial-gradient(55% 70% at 60% 48%,rgba(56,103,255,.25),transparent 70%)!important}
+html body.wl.wl-home .wl-hero{padding:110px 7vw 56px!important;min-height:100vh!important;align-items:center!important}
+html body.wl.wl-home .wl-hero-t{width:min(620px,50vw)!important;position:relative!important}
+html body.wl.wl-home .ius-system-mark{display:flex!important;align-items:center!important;gap:14px!important;margin-bottom:22px!important}
+html body.wl.wl-home .ius-system-mark img{width:58px!important;height:58px!important;border-radius:16px!important;object-fit:cover!important;box-shadow:0 0 34px rgba(54,112,255,.6)!important;border:1px solid rgba(180,214,255,.5)!important}
+html body.wl.wl-home .ius-system-mark span{display:flex!important;flex-direction:column!important}
+html body.wl.wl-home .ius-system-mark b{font-size:15px!important;letter-spacing:.22em!important;color:#fff!important}
+html body.wl.wl-home .ius-system-mark small{margin-top:4px!important;font-size:9px!important;letter-spacing:.17em!important;color:#91a8d3!important;text-transform:uppercase!important}
+html body.wl.wl-home .wl-hero-t h1{margin:0!important;font-size:clamp(48px,6.3vw,86px)!important;line-height:.9!important;letter-spacing:.025em!important}
+html body.wl.wl-home .wl-hero-t h2{font-size:clamp(24px,3vw,40px)!important;line-height:1.03!important;margin:20px 0 0!important;color:#e8efff!important}
+html body.wl.wl-home .wl-hero-t em{display:block!important;margin-top:17px!important;font-size:17px!important;letter-spacing:.05em!important}
+html body.wl.wl-home .wl-hero-t p{display:block!important;margin:12px 0 0!important;max-width:570px!important;color:#b7c9e9!important;font-size:14px!important;line-height:1.65!important}
+html body.wl.wl-home .wl-cta{margin-top:28px!important;display:flex!important;gap:11px!important;flex-wrap:wrap!important}
+html body.wl.wl-home .wl-cta a{height:48px!important;min-width:0!important;padding:0 18px!important;border-radius:14px!important;font-size:12px!important}
+html body.wl.wl-home .wl-cta a.p{min-width:150px!important}
+html body.wl.wl-home .wl-cta a.g{display:flex!important;background:rgba(5,15,42,.72)!important;border:1px solid rgba(154,190,255,.38)!important;color:#fff!important}
+html body.wl.wl-home .wl-cta a.g:nth-of-type(1){display:flex!important}
+html body.wl.wl-home .wl-hero-a,html body.wl.wl-home .wl-feats{display:none!important}
+
+/* Forms: identical visual language on every auth screen. */
+html body.wl.wl-auth .wl-top,html body.wl.wl-adm .wl-top{
+  min-height:64px!important;padding-right:150px!important;background:rgba(2,7,24,.86)!important;border-bottom:1px solid rgba(135,177,255,.2)!important;backdrop-filter:blur(18px)!important;
+}
+html body.wl.wl-auth .wl-brand,html body.wl.wl-adm .wl-brand{display:flex!important;align-items:center!important;gap:10px!important}
+html body.wl.wl-auth .wl-brand img,html body.wl.wl-adm .wl-brand img{width:38px!important;height:38px!important;border-radius:10px!important;object-fit:cover!important}
+html body.wl.wl-auth .wl-brand b,html body.wl.wl-adm .wl-brand b{font-size:14px!important;letter-spacing:.16em!important}
+html body.wl.wl-auth .wl-brand small,html body.wl.wl-adm .wl-brand small{font-size:9px!important;letter-spacing:.1em!important}
+html body.wl.wl-auth .wl-nav,html body.wl.wl-adm .wl-nav{margin-left:auto!important;gap:5px!important}
+html body.wl.wl-auth .wl-nav a,html body.wl.wl-adm .wl-nav a{height:40px!important;padding:0 12px!important;border-radius:12px!important;font-size:10px!important;font-weight:800!important;display:flex!important;align-items:center!important;gap:6px!important;white-space:nowrap!important}
+html body.wl.wl-auth .wl-scene,html body.wl.wl-adm .wl-scene{display:grid!important;grid-template-columns:minmax(0,54%) minmax(430px,46%)!important;min-height:calc(100vh - 64px)!important;background:#030817!important;overflow:hidden!important}
+html body.wl.wl-auth .wl-scene>.wl-L.img,html body.wl.wl-adm .wl-scene>.wl-L.img{display:block!important;min-height:calc(100vh - 64px)!important;padding:0!important;background:#030817!important}
+html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame{width:100%!important;height:100%!important;min-height:100%!important;border:0!important;border-radius:0!important;transform:none!important;box-shadow:none!important;background:url('ius-system-guy-hero.webp') center/cover no-repeat!important;position:relative!important;overflow:hidden!important}
+html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame:before,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame:before{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(2,7,24,.55),rgba(2,7,24,.08) 62%,rgba(2,7,24,.30)),linear-gradient(180deg,rgba(2,7,24,.38),transparent 40%,rgba(2,7,24,.48))!important;z-index:1!important;pointer-events:none!important}
+html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame:after,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame:after{content:"IUS AND SONS\A School Results Management System"!important;white-space:pre!important;position:absolute!important;left:38px!important;top:34px!important;color:#fff!important;font-size:clamp(23px,2.5vw,38px)!important;font-weight:900!important;line-height:1.08!important;letter-spacing:.02em!important;text-shadow:0 8px 35px rgba(0,0,0,.55)!important;z-index:2!important;max-width:520px!important}
+html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame .wp,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame .wp{display:none!important}
+html body.wl.wl-auth .wl-scene>.wl-R,html body.wl.wl-adm .wl-scene>.wl-R{display:flex!important;align-items:center!important;justify-content:center!important;padding:34px!important;background:linear-gradient(90deg,rgba(4,12,31,.95),#f7f9ff 22%)!important;min-width:0!important}
+html body.wl.wl-auth .wl-scene .wl-card,html body.wl.wl-adm .wl-scene .wl-card{width:min(610px,100%)!important;max-height:calc(100vh - 100px)!important;overflow:auto!important;background:rgba(255,255,255,.985)!important;border:1px solid rgba(210,222,247,.95)!important;border-radius:26px!important;box-shadow:0 35px 100px -30px rgba(17,38,100,.65)!important;transform:none!important;padding:30px!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-h h3,html body.wl.wl-adm .wl-scene .wl-card .wl-h h3{font-size:27px!important;color:#091b43!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-sub,html body.wl.wl-adm .wl-scene .wl-card .wl-sub{color:#5f7198!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-in,html body.wl.wl-adm .wl-scene .wl-card .wl-in{background:#f5f8ff!important;border:1px solid #d7e1f4!important;border-radius:13px!important;min-height:48px!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-btn,html body.wl.wl-adm .wl-scene .wl-card .wl-btn{background:linear-gradient(100deg,#2d6bff,#8a4dff)!important;border-radius:13px!important;height:50px!important;box-shadow:0 16px 38px -15px rgba(68,91,245,.8)!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-h .bd,html body.wl.wl-adm .wl-scene .wl-card .wl-h .bd{background:linear-gradient(135deg,#2d6bff,#8a4dff)!important;border-radius:12px!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-type .wl-ty.on,html body.wl.wl-adm .wl-scene .wl-card .wl-type .wl-ty.on{background:linear-gradient(135deg,#2d6bff,#8a4dff)!important}
+
+/* Keep the real Electron title-bar controls clear of the page navigation.
+   They remain native and clickable: minimise, maximise/restore and close. */
+html body.wl.wl-home .wl-top,html body.wl.wl-auth .wl-top,html body.wl.wl-adm .wl-top{padding-right:155px!important}
+
+@media(max-width:1050px){
+ html body.wl.wl-home .wl-nav a span{display:none!important}
+ html body.wl.wl-home .wl-nav a{width:42px!important;justify-content:center!important;padding:0!important}
+ html body.wl.wl-auth .wl-nav a span,html body.wl.wl-adm .wl-nav a span{display:none!important}
+ html body.wl.wl-auth .wl-nav a,html body.wl.wl-adm .wl-nav a{width:40px!important;justify-content:center!important;padding:0!important}
+}
+@media(max-width:820px){
+ html body.wl.wl-auth .wl-scene,html body.wl.wl-adm .wl-scene{grid-template-columns:1fr!important;display:block!important}
+ html body.wl.wl-auth .wl-scene>.wl-L.img,html body.wl.wl-adm .wl-scene>.wl-L.img{height:330px!important;min-height:330px!important}
+ html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame{min-height:330px!important}
+ html body.wl.wl-auth .wl-scene>.wl-R,html body.wl.wl-adm .wl-scene>.wl-R{padding:18px 14px 28px!important;background:#f7f9ff!important;margin-top:-18px!important;position:relative!important;z-index:4!important;border-radius:24px 24px 0 0!important}
+ html body.wl.wl-home .wl-hero{padding:110px 28px 60px!important}
+ html body.wl.wl-home .wl-hero-t{width:100%!important;max-width:600px!important}
+ html body.wl.wl-home .wl-homewrap:after{inset:30% 0 0!important;mask-image:linear-gradient(180deg,transparent 0%,#000 24%,#000 100%)!important;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 24%,#000 100%)!important}
+}
+
+/* 1.5.77 — the Home navigation (Register, Recover, Unlock, Sign In, Try Website) was hidden behind the hero picture; bring it to the front */
+html body.wl.wl-home .wl-top{z-index:60!important}
+html body.wl.wl-home .wl-top .wl-nav,html body.wl.wl-home .wl-top .wl-brand{position:relative;z-index:61}
+
+/* 1.5.78 — every form page shows the same man picture (the old file name home-man-hero.png no longer exists), and the top menu stays in front */
+html body.wl.wl-auth .wl-scene>.wl-L.img .wl-frame,html body.wl.wl-adm .wl-scene>.wl-L.img .wl-frame{background-image:url('ius-system-guy-hero.webp')!important;background-size:cover!important;background-position:30% center!important;background-repeat:no-repeat!important}
+html body.wl.wl-auth .wl-top,html body.wl.wl-adm .wl-top{position:relative!important;z-index:60!important}
+html body.wl.wl-auth .wl-top .wl-nav,html body.wl.wl-adm .wl-top .wl-nav,html body.wl.wl-auth .wl-top .wl-brand,html body.wl.wl-adm .wl-top .wl-brand{position:relative;z-index:61}
+@media(min-width:901px) and (max-height:820px){html body.wl.wl-auth .wl-scene.reg .wl-card{zoom:.9;max-height:none!important}}
+@media(min-width:901px) and (max-height:700px){html body.wl.wl-auth .wl-scene.reg .wl-card{zoom:.8}html body.wl.wl-auth .wl-scene .wl-card{zoom:.92}}
+html body.wl.wl-auth .wl-scene .wl-card .wl-file{background:#eef2ff!important;color:#2d44a0!important;border:1.5px dashed #9db4ff!important;box-shadow:none!important}
+html body.wl.wl-auth .wl-scene .wl-card .wl-file:hover{background:#e3eaff!important}

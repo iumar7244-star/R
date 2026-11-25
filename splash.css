@@ -1,0 +1,40 @@
+/* IUS AND SONS 1.5.35 — start-up splash (always loaded on every page, whatever design theme is chosen). */
+/* ---- start-up splash 1.5.61: circle opens, logo + name, floating shapes, Get Started, curved wave reveal ---- */
+.ius-splash{background:#f3f7ff!important;flex-direction:column;color:#fff;overflow:hidden}
+.ius-splash .sp2{position:absolute;inset:0;overflow:hidden}
+.ius-splash .sp2-disc{position:absolute;inset:0;background:radial-gradient(110% 80% at 50% 30%,#3b82f6 0%,#1d4ed8 42%,#0a2470 100%);clip-path:circle(34px at 50% 50%);animation:sp2Disc 1.05s cubic-bezier(.7,0,.2,1) .35s forwards}
+.ius-splash .sp2-disc::after{content:"";position:absolute;inset:0;background:radial-gradient(40% 30% at 20% 20%,rgba(125,211,252,.35),transparent 70%),radial-gradient(40% 35% at 85% 70%,rgba(129,140,248,.35),transparent 70%)}
+.ius-splash .sp2-brand{position:absolute;left:0;right:0;top:27%;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:0 16px}
+.ius-splash .sp2-logo{position:relative;width:118px;height:118px;border-radius:32px;display:flex;align-items:center;justify-content:center;overflow:hidden;opacity:0;transform:scale(.5);
+  background:linear-gradient(160deg,rgba(255,255,255,.34),rgba(255,255,255,.08) 60%,rgba(255,255,255,.14));border:1px solid rgba(255,255,255,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.75),0 24px 50px -16px rgba(2,12,60,.8),0 0 70px -6px rgba(147,197,253,.7);animation:sp2Logo .75s cubic-bezier(.2,1.25,.3,1) 1.05s forwards}
+.ius-splash .sp2-logo img{width:78px;height:78px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 0 12px rgba(191,219,254,.9))}
+.ius-splash .sp-shine{position:absolute;inset:-30% auto -30% -60%;width:46%;transform:skewX(-20deg);z-index:2;background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);animation:spShine 2.2s ease-in-out 1.8s infinite}
+.ius-splash .sp2-name{font-weight:800;font-size:34px;letter-spacing:.14em;opacity:0;transform:translateY(16px);animation:sp2Up .7s cubic-bezier(.2,.9,.3,1) 1.5s forwards;text-shadow:0 6px 30px rgba(2,12,60,.5)}
+.ius-splash .sp2-sub{font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(224,236,255,.85);opacity:0;animation:sp2Up .7s cubic-bezier(.2,.9,.3,1) 1.85s forwards}
+.ius-splash .sp2-deco{position:absolute;left:0;right:0;bottom:0;width:100%;height:30%;opacity:0;animation:spFade .9s ease 2.1s forwards;pointer-events:none}
+.ius-splash .sp2-deco g{fill:rgba(255,255,255,.14);transform-box:fill-box;transform-origin:center;animation:sp2Bob 4.5s ease-in-out infinite}
+.ius-splash .sp2-deco .f2{animation-delay:-1.1s}.ius-splash .sp2-deco .f3{animation-delay:-2.2s}.ius-splash .sp2-deco .f4{animation-delay:-3.3s}
+.ius-splash .sp2-go{position:absolute;left:50%;bottom:9%;width:min(78%,340px);margin-left:calc(min(78%,340px)/-2);display:flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;font-size:16px;color:#0a2470;background:#fff;border:0;border-radius:999px;padding:15px 20px;cursor:pointer;
+  box-shadow:0 18px 40px -12px rgba(2,12,60,.7);transform:translateY(120px);opacity:0;animation:sp2Btn .8s cubic-bezier(.2,1.1,.3,1) 2.5s forwards,sp2Glow 2.2s ease-in-out 3.4s infinite}
+.ius-splash .sp2-go svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.ius-splash .sp2-go:hover{background:#eaf2ff}
+.ius-splash .sp2-wave{position:fixed;left:-10vw;width:120vw;height:130vh;top:100vh;background:#06122f;border-radius:50% 50% 0 0/14vh 14vh 0 0;transition:transform 1s cubic-bezier(.65,0,.25,1);will-change:transform;pointer-events:none}
+.ius-splash.leaving .sp2-wave{transform:translateY(-120vh)}
+.ius-splash.leaving .sp2-go{pointer-events:none}
+@keyframes sp2Disc{to{clip-path:circle(150% at 50% 50%)}}
+@keyframes sp2Logo{to{opacity:1;transform:none}}
+@keyframes sp2Up{to{opacity:1;transform:none}}
+@keyframes sp2Btn{to{opacity:1;transform:none}}
+@keyframes sp2Glow{0%,100%{box-shadow:0 18px 40px -12px rgba(2,12,60,.7),0 0 0 0 rgba(255,255,255,.45)}50%{box-shadow:0 18px 40px -12px rgba(2,12,60,.7),0 0 0 12px rgba(255,255,255,0)}}
+@keyframes sp2Bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes spShine{from{left:-60%}to{left:140%}}
+@keyframes spFade{to{opacity:1}}
+@media(max-width:520px){.ius-splash .sp2-name{font-size:25px}.ius-splash .sp2-logo{width:100px;height:100px}.ius-splash .sp2-logo img{width:66px;height:66px}}
+@media(prefers-reduced-motion:reduce){.ius-splash *{animation:none!important;transition:none!important}.ius-splash .sp2-disc{clip-path:circle(150% at 50% 50%)}.ius-splash .sp2-logo,.ius-splash .sp2-name,.ius-splash .sp2-sub,.ius-splash .sp2-deco,.ius-splash .sp2-go{opacity:1;transform:none}}
+/* the splash is painted from the first frame; pages opened after start-up hide it before anything is drawn */
+html.ius-skip-splash .ius-splash{display:none!important}
+html.ius-splashing,html.ius-splashing body{background:#f3f7ff}
+.ius-splash .sp2-go{background:#fff!important;color:#0a2470!important;border:0!important;text-shadow:none!important}
+.ius-splash .sp2-go:hover{background:#eaf2ff!important}
+.ius-splash .sp2-deco g{fill:rgba(255,255,255,.2)}

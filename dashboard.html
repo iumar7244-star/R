@@ -1,0 +1,156 @@
+<!doctype html><html lang="en" data-area="app"><head>
+<meta charset="utf-8"><script>try{if(localStorage.getItem("ius_sons_local_session_v1")&&sessionStorage.getItem("ius_unlocked_v1")!=="1"&&localStorage.getItem("ius_unlocked_v1")!=="1")location.replace("auth.html?view=unlock")}catch(e){}</script><script src="theme-boot.js"></script><script src="winbar.js"></script><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#071433"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard — IUS AND SONS</title><link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="modules.css"><link rel="stylesheet" href="splash.css"><link id="iusGlassCss" rel="stylesheet" href="theme.css"><link rel="stylesheet" href="vivid.css"><link rel="stylesheet" href="winbar.css"><script>window.IUS_THEME&&IUS_THEME.applyDesign()</script></head>
+<body>
+<div id="iusSplash" class="ius-splash" aria-label="IUS AND SONS loading"><div class="sp-stage sp2"><div class="sp2-disc"></div><div class="sp2-brand"><div class="sp2-logo"><img src="logo.webp" alt=""><i class="sp-shine"></i></div><div class="sp2-name">IUS AND SONS</div><div class="sp2-sub">School Results Management System</div></div><svg class="sp2-deco" viewBox="0 0 420 130" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><g class="f1"><path d="M14 112V56q38-14 52 4 14-18 52-4v56q-38-12-52 6-14-18-52-6z"/></g><g class="f2"><path d="M180 38l64 24-64 24-64-24z"/><path d="M146 76v22q34 20 68 0V76l-34 14z"/><path d="M240 66v34" stroke="rgba(255,255,255,.14)" stroke-width="5" fill="none"/></g><g class="f3"><path d="M292 112L336 44l18 11-44 68z"/><path d="M292 112l18 11-22 6z"/></g><g class="f4"><rect x="372" y="66" width="38" height="52" rx="9"/><rect x="366" y="60" width="50" height="12" rx="6"/></g></svg><button type="button" class="sp2-go" aria-label="Get started"><span>Get Started</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><div class="sp2-wave"></div></div></div>
+<div id="iusPageAfterIntro" class="ius-page-after-intro">
+<div class="appShell">
+  <aside class="sidebar"><div class="sideBrand"><img src="logo.webp"><span>IUS AND SONS</span><small>REPORT AND SCHOOL MANAGEMENT SYSTEM<br>Offline Version</small></div><div id="schoolBadgeMini" class="schoolMini"></div><nav><button class="navlink active" data-view="overview">🏠 Dashboard</button><button class="navlink" data-view="profile">🏫 School Profile</button><button class="navlink" data-view="students">👨‍🎓 Student Registration</button><button class="navlink" data-view="teachers">👩‍🏫 Teacher Management</button><button class="navlink" data-view="classes">👥 Classes & Streams</button><button class="navlink" data-view="subjects">📖 Subjects</button><button class="navlink" data-view="fees">🪙 School Fees</button><button class="navlink" data-view="attendance">✅ Attendance</button><button class="navlink" data-view="results">📝 Examinations</button><button class="navlink" data-view="timetable">🕒 Timetable</button><button class="navlink" data-view="library">📚 Library</button><button class="navlink" data-view="inventory">📦 Inventory</button><button class="navlink" data-view="discipline">🛡️ Discipline</button><button class="navlink" data-view="visitors">🧑‍🤝‍🧑 Visitors</button><button class="navlink" data-view="reports">📊 Reports</button><a class="navlink sub" href="report.html" target="_blank">1) Report Generator</a><a class="navlink sub" href="report.html#reportDesigner" target="_blank">2) Report Designer</a><button class="navlink" data-view="settings">⚙️ Settings</button><button class="navlink" data-view="users">👤 User Accounts</button><button class="navlink" data-view="backup">☁️ Backup & Restore</button><button class="navlink" id="logoutBtn">⏻ Logout</button></nav></aside>
+
+  <main class="appMain">
+    <section id="view-overview" class="view"><div id="newDash"></div><div style="display:none"><div id="overviewCards"></div><input id="ov-search"><span id="ov-sc"></span><div id="ov-students"></div><span id="ov-tc"></span><div id="ov-staff"></div></div></section>
+
+    <section id="view-profile" class="view" style="display:none">
+      <h2>School Profile</h2>
+      <label>School Name<input id="pf-name"></label>
+      <label>Location<input id="pf-location"></label>
+      <label>P.O. Box<input id="pf-pobox"></label>
+      <label>Tel<input id="pf-tel"></label>
+      <label>School Badge<input id="pf-badge" type="file" accept="image/*"></label>
+      <img id="pf-badge-preview" style="max-width:90px;display:none;margin-top:8px">
+      <button id="pf-save">Save Profile</button>
+      <p id="pf-msg" class="msg"></p>
+      <p class="hint" id="pf-ver" style="margin-top:14px"></p>
+      </section><section id="view-backup" class="view" style="display:none"><h2>Backup &amp; Restore</h2>
+      
+      <p class="hint">Your data is stored only on this device. Download a backup regularly and keep a copy on a USB stick or cloud drive. Use Restore to move your school to another computer or phone.</p>
+      <button id="bk-export" class="green">⬇ Download Backup</button>
+      <button id="bk-import" class="gray">⬆ Restore Backup</button>
+      <input type="file" id="bk-file" accept=".json,application/json" style="display:none">
+      <p id="bk-msg" class="msg"></p>
+    </section>
+
+    
+
+    <section id="view-classes" class="view" style="display:none">
+      <h2>Classes & Streams</h2>
+      <div class="row"><input id="cl-input" placeholder="e.g. Senior 2"><select id="cl-category"><option value="primary">Primary School</option><option value="senior12">Senior 1 & 2 (O-Level)</option><option value="senior34">Senior 3 & 4 (O-Level)</option><option value="alevel">Senior 5 & 6 (A-Level)</option><option value="tp">Theology Primary</option><option value="tj">أول إعدادي – ثالث إعدادي</option><option value="ts">أول ثانوي – ثالث ثانوي</option></select><button id="cl-add">+ Add Class</button></div>
+      <div class="classYearRow"><label style="margin:0">Year of study to view students for:</label><select id="cl-year"></select></div>
+      <p id="cl-msg" class="msg"></p>
+      <div id="cl-list"></div>
+    </section>
+
+    <section id="view-subjects" class="view" style="display:none">
+      <h2>Subjects</h2>
+      <div class="grid">
+  <label>Subject name<input id="sub-input" placeholder="e.g. Mathematics"></label>
+  <div class="class-picker-wrap"><label>Assign to classes</label><p class="hint">Classes are sorted from lowest to highest. Primary and Theology Primary classes appear in two columns.</p><div id="sub-class-picker" class="sub-class-picker"></div></div>
+</div>
+<p class="hint">Subjects assigned to a class appear automatically in the Report Generator for that class. If no classes are selected, the subject is available to all classes.</p>
+<button id="sub-add">+ Add Subject</button>
+      <table class="datatable"><thead><tr><th>Subject</th><th>Assigned classes</th><th></th></tr></thead><tbody id="sub-body"></tbody></table>
+    </section>
+
+    <section id="view-teachers" class="view" style="display:none">
+      <h2>Administration — Teachers &amp; Staff</h2>
+      <div class="grid">
+        <label>Full Name<input id="tc-name"></label>
+        <label>Email<input id="tc-email" type="email"></label>
+        <label>Phone<input id="tc-phone" type="tel"></label>
+      </div>
+      <div class="grid" id="tc-extra"></div>
+      <label>Photo (optional)<input id="tc-photo" type="file" accept="image/*"></label>
+      <button id="tc-add">+ Add Teacher / Staff</button>
+      <p id="tc-msg" class="msg"></p>
+      <div id="tc-list" class="people"></div>
+      <hr><div id="tc-payroll"></div>
+    </section>
+
+    <section id="view-students" class="view" style="display:none">
+      <h2>Students</h2>
+      <div class="grid">
+        <label>Full Name<input id="st-name"></label>
+        <label>Gender<select id="st-gender"><option>Male</option><option>Female</option></select></label>
+        <label>Academic Year<select id="st-year"></select></label>
+        <label>Class<select id="st-class"></select></label>
+        <label id="st-class2-wrap">Second class (optional) <small>one secular + one theology class</small><select id="st-class2"></select></label>
+        <label>Stream<select id="st-stream"><option value="">— none —</option></select></label>
+        <label>Photo (optional)<input id="st-photo" type="file" accept="image/*"></label>
+      </div>
+      <h4 class="sub-h">Student details</h4><div class="grid" id="st-extra"></div>
+      <h4 class="sub-h">Parent / Guardian (father or mother)</h4><div class="grid" id="st-parent"></div>
+      <h4 class="sub-h">Alternative person to contact (if parent cannot be reached)</h4><div class="grid" id="st-alt"></div>
+      <button id="st-add">+ Add Student</button>
+      <p id="st-msg" class="msg"></p>
+      <table class="datatable"><thead><tr><th>Photo</th><th>Code</th><th>Name</th><th>Gender</th><th>Class</th><th>Date of Birth</th><th>Parent / Guardian</th><th>Parent Contact</th></tr></thead><tbody id="st-body"></tbody></table>
+      <hr>
+      <section class="gender-manager" aria-labelledby="genderManagerTitle">
+        <h3 id="genderManagerTitle">Gender Manager — Bulk Update</h3>
+        <p class="hint">Filter students, select several records, then assign gender once. Existing genders stay unchanged unless you select and update those students.</p>
+        <div class="grid">
+          <label>Filter by class<select id="gm-class"><option value="">All classes</option></select></label>
+          <label>Search name / admission number<input id="gm-search" placeholder="Type a student name or code"></label>
+          <label>Set selected students to<select id="gm-gender"><option value="">Choose gender</option><option value="Male">Male</option><option value="Female">Female</option></select></label>
+        </div>
+        <div class="gm-actions"><button id="gm-select-visible" type="button" class="gray">Select visible</button><button id="gm-clear" type="button" class="gray">Clear selection</button><button id="gm-apply" type="button" class="green">Apply gender to selected</button></div>
+        <p id="gm-msg" class="msg" aria-live="polite"></p>
+        <div style="overflow-x:auto"><table class="datatable"><thead><tr><th>Select</th><th>Student</th><th>Admission No.</th><th>Class</th><th>Current gender</th></tr></thead><tbody id="gm-body"></tbody></table></div>
+      </section>
+    </section>
+
+    <section id="view-results" class="view" style="display:none">
+      <h2>Enter Results</h2>
+      <div class="grid">
+        <label>Academic Year<select id="rs-year"></select></label>
+        <label>Term<select id="rs-term"><option>Term 1</option><option>Term 2</option><option>Term 3</option></select></label>
+        <label>Assessment<select id="rs-assessment"><option value="MIDTERM">MIDTERM</option><option value="END_TERM">END TERM</option></select></label>
+        <label>Class<select id="rs-class"></select></label>
+      </div>
+      <p class="hint">All subjects of the class are shown for every student — enter all marks, then press Save. The report generator uses these marks automatically.</p>
+      <button id="rs-load">Load Students</button><button id="rs-save" class="green">Save Results</button>
+      <p id="rs-msg" class="msg"></p>
+      <div style="overflow-x:auto"><table class="datatable rs-grid"><thead id="rs-head"></thead><tbody id="rs-body"></tbody></table></div>
+    </section>
+  <section id="view-settings" class="view" style="display:none"><h2>Settings</h2><div id="setBody"></div><hr><h3>Academic Years</h3>
+      <div class="row"><input id="yr-input" type="number" placeholder="e.g. 2026" style="width:140px"><button id="yr-add">+ Add Year</button></div>
+      <table class="datatable"><thead><tr><th>Year</th><th>Status</th><th></th></tr></thead><tbody id="yr-body"></tbody></table>
+    </section></main>
+</div>
+<script src="config.js"></script>
+</div><div id="stModal" class="st-modal" style="display:none" role="dialog" aria-modal="true">
+  <div class="st-modal-box wide">
+    <div id="sp-photo" class="sp-photo"></div>
+    <h3 id="sp-name"></h3>
+    <p id="sp-info" class="hint"></p>
+    <input id="sp-file" type="file" accept="image/*" style="display:none">
+    <div id="sp-form" class="pf-form"></div>
+    <div class="sp-actions">
+      <button id="sp-save">💾 Save Details</button>
+      <button id="sp-upload" class="gray">📷 Upload / Change Photo</button>
+      <button id="sp-remove" class="gray">Remove Photo</button>
+      <button id="sp-delete" class="danger">🗑 Delete Student</button>
+      <button id="sp-close" class="gray">Close</button>
+    </div>
+    <p id="sp-msg" class="msg"></p>
+  </div>
+</div>
+<div id="tcModal" class="st-modal" style="display:none" role="dialog" aria-modal="true">
+  <div class="st-modal-box wide">
+    <div id="tp-photo" class="sp-photo"></div>
+    <h3 id="tp-name"></h3>
+    <p id="tp-info" class="hint"></p>
+    <input id="tp-file" type="file" accept="image/*" style="display:none">
+    <div id="tp-form" class="pf-form"></div>
+    <div class="sp-actions">
+      <button id="tp-save">💾 Save Details</button>
+      <button id="tp-upload" class="gray">📷 Upload / Change Photo</button>
+      <button id="tp-remove" class="gray">Remove Photo</button>
+      <button id="tp-delete" class="danger">🗑 Delete Staff</button>
+      <button id="tp-close" class="gray">Close</button>
+    </div>
+    <p id="tp-msg" class="msg"></p>
+  </div>
+</div>
+<script src="dashboard.js"></script><script src="enhance.js"></script>
+<script src="modules.js"></script><script src="import-word.js"></script><script src="intro.js"></script><script src="pwa.js"></script></body></html>

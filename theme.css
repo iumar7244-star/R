@@ -1,0 +1,251 @@
+/* IUS AND SONS 1.5.29 — Glass theme (1.5.35: the "Liquid Glass" design theme; on the home, sign-in and admin pages it is always used, after sign-in it is chosen in the top bar) (dark "liquid glass" by default, frosted-light in Light Mode).
+   Look only: no layout logic, no data, and the printed report sheets (.report-sheet) are never touched.
+   Loaded after every other stylesheet. Sidebar/top-bar colours chosen in Settings still tint the glass. */
+:root{--g-radius:22px}
+html body{
+  --t:#0b1b3f;--t2:#4a5b85;--gf:rgba(255,255,255,.62);--gf2:rgba(255,255,255,.42);--gb:rgba(255,255,255,.9);
+  --gsh:0 10px 30px rgba(30,58,138,.14);--inp:rgba(255,255,255,.85);--hi:rgba(255,255,255,.9);--acc:#2563eb;--acc2:#2563eb;
+  --gbg:radial-gradient(900px 600px at 10% 0%,rgba(59,130,246,.26),transparent 60%),radial-gradient(900px 600px at 100% 10%,rgba(59,130,246,.25),transparent 60%),radial-gradient(900px 700px at 60% 110%,rgba(129,140,248,.2),transparent 60%),#e6eef9;
+  font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+html body.dark-mode{
+  --t:#eef3ff;--t2:#a9b8dc;--gf:rgba(255,255,255,.07);--gf2:rgba(255,255,255,.04);--gb:rgba(255,255,255,.17);
+  --gsh:0 14px 36px rgba(0,0,0,.42);--inp:rgba(6,14,36,.55);--hi:rgba(255,255,255,.2);--acc:#3b82f6;--acc2:#60a5fa;
+  --gbg:radial-gradient(1100px 700px at 12% 0%,rgba(37,99,235,.30),transparent 60%),radial-gradient(900px 650px at 100% 12%,rgba(59,130,246,.28),transparent 60%),radial-gradient(900px 700px at 55% 110%,rgba(99,102,241,.22),transparent 60%),#050d1f;
+}
+html body,html body:is(.dark-mode,:not(.dark-mode)){background:var(--gbg)!important;background-attachment:fixed!important;color:var(--t)}
+html body:is(.dark-mode,:not(.dark-mode)) .appShell,html body:is(.dark-mode,:not(.dark-mode)) .appMain{background:transparent!important;color:var(--t)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .ius-page-after-intro{background:transparent}
+
+/* ---- glass surfaces ---- */
+html body:is(.dark-mode,:not(.dark-mode)) .view,html body:is(.dark-mode,:not(.dark-mode)) section:not(.report-sheet),html body:is(.dark-mode,:not(.dark-mode)) .panel,html body:is(.dark-mode,:not(.dark-mode)) .card,html body:is(.dark-mode,:not(.dark-mode)) .student,html body:is(.dark-mode,:not(.dark-mode)) .choiceCard,html body:is(.dark-mode,:not(.dark-mode)) .theme-settings,html body:is(.dark-mode,:not(.dark-mode)) .payment-band,
+html body:is(.dark-mode,:not(.dark-mode)) .payroll-summary>div,html body:is(.dark-mode,:not(.dark-mode)) .vday,html body:is(.dark-mode,:not(.dark-mode)) .promo-box,html body:is(.dark-mode,:not(.dark-mode)) .rg-card,html body:is(.dark-mode,:not(.dark-mode)) .custom-table-editor,html body:is(.dark-mode,:not(.dark-mode)) .rcard,html body:is(.dark-mode,:not(.dark-mode)) .pcard,html body:is(.dark-mode,:not(.dark-mode)) .fee-graph-wrap,html body:is(.dark-mode,:not(.dark-mode)) .combined-student,
+html body:is(.dark-mode,:not(.dark-mode)) .st-modal-box,html body:is(.dark-mode,:not(.dark-mode)) .modal-box{
+  background:var(--gf)!important;color:var(--t)!important;border:1px solid var(--gb)!important;border-radius:var(--g-radius)!important;
+  -webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);
+  box-shadow:inset 0 1px 0 var(--hi),var(--gsh)!important;
+}
+html body:is(.dark-mode,:not(.dark-mode)) .view{padding:22px}
+html body:is(.dark-mode,:not(.dark-mode)) .student,html body:is(.dark-mode,:not(.dark-mode)) .payment-band,html body:is(.dark-mode,:not(.dark-mode)) .payroll-summary>div,html body:is(.dark-mode,:not(.dark-mode)) .vday,html body:is(.dark-mode,:not(.dark-mode)) .pcard,html body:is(.dark-mode,:not(.dark-mode)) .custom-table-editor,html body:is(.dark-mode,:not(.dark-mode)) .combined-student{background:var(--gf2)!important;border-radius:16px!important}
+html body:is(.dark-mode,:not(.dark-mode)) .panel{border-radius:20px!important}
+html body:is(.dark-mode,:not(.dark-mode)) .promo-box{color:var(--t)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .vday.total{background:linear-gradient(135deg,var(--acc2),var(--acc))!important;color:#fff!important}
+html body:is(.dark-mode,:not(.dark-mode)) .vday.today{border-color:var(--acc2)!important}
+html body:is(.dark-mode,:not(.dark-mode)) h1,html body:is(.dark-mode,:not(.dark-mode)) h2,html body:is(.dark-mode,:not(.dark-mode)) h3,html body:is(.dark-mode,:not(.dark-mode)) h4,html body:is(.dark-mode,:not(.dark-mode)) p,html body:is(.dark-mode,:not(.dark-mode)) label,html body:is(.dark-mode,:not(.dark-mode)) .hint,html body:is(.dark-mode,:not(.dark-mode)) .card span,html body:is(.dark-mode,:not(.dark-mode)) .panel h4,html body:is(.dark-mode,:not(.dark-mode)) .vday,html body:is(.dark-mode,:not(.dark-mode)) .payment-band *,html body:is(.dark-mode,:not(.dark-mode)) .pcard *{color:var(--t)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .hint,html body:is(.dark-mode,:not(.dark-mode)) .card span,html body:is(.dark-mode,:not(.dark-mode)) small,html body:is(.dark-mode,:not(.dark-mode)) .choiceCard p{color:var(--t2)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .hint{background:var(--gf2)!important;border-left:3px solid var(--acc2)!important;border-radius:10px;padding:8px 12px}
+html body:is(.dark-mode,:not(.dark-mode)) .view h2{font-size:1.35rem;letter-spacing:.2px}
+html body:is(.dark-mode,:not(.dark-mode)) .card b,html body:is(.dark-mode,:not(.dark-mode)) .vday b{font-weight:700}
+html body:is(.dark-mode,:not(.dark-mode)) .card{background:linear-gradient(150deg,var(--gf),var(--gf2))!important}
+
+/* ---- sidebar: floating rounded glass ---- */
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar{
+  position:sticky;top:14px;align-self:flex-start;height:calc(100vh - 28px);margin:14px 0 14px 14px;border-radius:28px;padding:16px 10px;
+  background:linear-gradient(160deg,color-mix(in srgb,var(--ius-sidebar,#0B2545) 55%,rgba(255,255,255,.1)),color-mix(in srgb,var(--ius-sidebar,#0B2545) 30%,rgba(255,255,255,.04)))!important;
+  border:1px solid var(--gb);-webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%);
+  box-shadow:inset 0 1px 0 var(--hi),inset 0 -1px 0 rgba(0,0,0,.2),var(--gsh);color:#fff!important;overflow-y:auto;scrollbar-width:thin;
+}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .sideBrand{border-bottom:1px solid rgba(255,255,255,.14);padding:6px 10px 14px;margin-bottom:8px}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .sideBrand span{letter-spacing:1.5px;color:#fff}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .sideBrand small,html body:is(.dark-mode,:not(.dark-mode)) .schoolMini{color:rgba(255,255,255,.75)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .schoolMini{border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:6px;padding:10px}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar nav{gap:6px;padding:6px 2px}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink{
+  color:#fff!important;border-radius:15px!important;padding:11px 14px!important;margin:0;
+  background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.14)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14);transition:background .15s,transform .15s,box-shadow .15s;
+}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink:hover{background:rgba(255,255,255,.14)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink.active{
+  background:linear-gradient(135deg,rgba(96,165,250,.38),rgba(59,130,246,.5))!important;border-color:rgba(255,255,255,.45)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 0 18px rgba(96,165,250,.35)!important;
+}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink.sub{background:transparent!important;border-color:transparent!important;box-shadow:none}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink.sub:hover{background:rgba(255,255,255,.1)!important}
+
+/* ---- top bar ---- */
+html body:is(.dark-mode,:not(.dark-mode)) .topbar{
+  background:linear-gradient(120deg,color-mix(in srgb,var(--ius-topbar,#123F70) 55%,rgba(255,255,255,.12)),color-mix(in srgb,var(--ius-topbar,#123F70) 28%,rgba(255,255,255,.04)))!important;
+  border:1px solid var(--gb);border-radius:24px!important;padding:16px 20px!important;color:#fff!important;
+  -webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);box-shadow:inset 0 1px 0 var(--hi),var(--gsh);
+}
+html body:is(.dark-mode,:not(.dark-mode)) .topbar h1{font-size:1.35rem;letter-spacing:.3px;color:#fff!important}
+html body:is(.dark-mode,:not(.dark-mode)) .topbar p,html body:is(.dark-mode,:not(.dark-mode)) .tb-r{color:rgba(255,255,255,.82)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .chip,html body:is(.dark-mode,:not(.dark-mode)) .tb-r .chip{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.22);border-radius:999px;box-shadow:none}
+html body:is(.dark-mode,:not(.dark-mode)) .chip,html body:is(.dark-mode,:not(.dark-mode)) .tb-r .chip,html body:is(.dark-mode,:not(.dark-mode)) .tb-r .chip *{color:#fff!important}
+html body:is(.dark-mode,:not(.dark-mode)) .tb-r .chip *{background:transparent!important;border:0!important}
+html body:is(.dark-mode,:not(.dark-mode)) .theme-toggle{border-radius:999px;background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.3)!important;color:#fff!important}
+html body:is(.dark-mode,:not(.dark-mode)) .dfoot{color:var(--t2)!important}
+
+/* ---- KPI cards on the dashboard: tinted glass with a coloured edge ---- */
+html body:is(.dark-mode,:not(.dark-mode)) .dc{--c:#3b82f6;border-radius:20px!important;color:var(--t)!important;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--c) 40%,transparent),var(--gf2) 75%)!important;
+  border:1px solid color-mix(in srgb,var(--c) 60%,rgba(255,255,255,.2))!important;
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 var(--hi),0 10px 26px color-mix(in srgb,var(--c) 22%,transparent);
+  transition:transform .15s}
+html body:is(.dark-mode,:not(.dark-mode)) .dc:hover{transform:translateY(-2px)}
+html body:is(.dark-mode,:not(.dark-mode)) .dc b{font-size:1.9rem;color:var(--t)!important}html body:is(.dark-mode,:not(.dark-mode)) .dc small,html body:is(.dark-mode,:not(.dark-mode)) .dc span{color:var(--t2)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .dc.c-blue{--c:#3b82f6}html body:is(.dark-mode,:not(.dark-mode)) .dc.c-green{--c:#22c55e}html body:is(.dark-mode,:not(.dark-mode)) .dc.c-purple{--c:#a855f7}html body:is(.dark-mode,:not(.dark-mode)) .dc.c-orange{--c:#f59e0b}html body:is(.dark-mode,:not(.dark-mode)) .dc.c-red{--c:#ef4444}
+html body:is(.dark-mode,:not(.dark-mode)) .dc.c-teal{--c:#14b8a6}html body:is(.dark-mode,:not(.dark-mode)) .dc.c-pink{--c:#ec4899}html body:is(.dark-mode,:not(.dark-mode)) .dc.c-olive{--c:#84cc16}html body:is(.dark-mode,:not(.dark-mode)) .dc.c-navy{--c:#6366f1}html body:is(.dark-mode,:not(.dark-mode)) .dc.c-cyan{--c:#06b6d4}
+html body:is(.dark-mode,:not(.dark-mode)) .qa button{border-radius:14px;border:1px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 14px rgba(0,0,0,.2);text-shadow:0 1px 2px rgba(0,0,0,.25)}
+html body:is(.dark-mode,:not(.dark-mode)) .rcard{color:var(--t)!important}
+
+/* ---- buttons ---- */
+html body:is(.dark-mode,:not(.dark-mode)) button:not(.navlink):not(.rg-box):not(.theme-toggle):not(.tab):not(.cb-color):not([class*="c-"]){
+  border-radius:999px;padding:9px 16px;font-size:14px;font-weight:700;border:1px solid rgba(255,255,255,.28);color:#fff;
+  background:linear-gradient(135deg,#1e40af,#3b82f6);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 4px 12px rgba(37,99,235,.35);
+  transition:filter .15s,transform .15s;
+}
+html body:is(.dark-mode,:not(.dark-mode)) button.green,html body:is(.dark-mode,:not(.dark-mode)) #pf-save,html body:is(.dark-mode,:not(.dark-mode)) #rs-save,html body:is(.dark-mode,:not(.dark-mode)) #saveResults,html body:is(.dark-mode,:not(.dark-mode)) #bk-export{background:linear-gradient(135deg,#16a34a,#0d9488)!important;color:#fff!important;border:1px solid rgba(255,255,255,.28)!important;font-size:14px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 4px 12px rgba(22,163,74,.3)}
+html body:is(.dark-mode,:not(.dark-mode)) button.green:hover,html body:is(.dark-mode,:not(.dark-mode)) #pf-save:hover,html body:is(.dark-mode,:not(.dark-mode)) #rs-save:hover,html body:is(.dark-mode,:not(.dark-mode)) #saveResults:hover,html body:is(.dark-mode,:not(.dark-mode)) #bk-export:hover{background:linear-gradient(135deg,#22c55e,#14b8a6)!important}
+html body:is(.dark-mode,:not(.dark-mode)) button.danger{background:linear-gradient(135deg,#dc2626,#e11d48);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 4px 12px rgba(220,38,38,.28)}
+html body:is(.dark-mode,:not(.dark-mode)) button.gray{background:rgba(120,135,170,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+html body:is(.dark-mode,:not(.dark-mode)) button:not(.navlink):hover{filter:brightness(1.1)}
+html body:is(.dark-mode,:not(.dark-mode)) button:not(.navlink):active{transform:translateY(1px)}
+html body:is(.dark-mode,:not(.dark-mode)) button:disabled{opacity:.5;cursor:not-allowed;filter:grayscale(.4)}
+html body:is(.dark-mode,:not(.dark-mode)) .tabs .tab{border-radius:999px;background:var(--gf2)!important;color:var(--t)!important;border:1px solid var(--gb)}
+html body:is(.dark-mode,:not(.dark-mode)) .tabs .tab.active{background:linear-gradient(135deg,#1e40af,#3b82f6)!important;color:#fff!important}
+html body:is(.dark-mode,:not(.dark-mode)) button:focus-visible,html body:is(.dark-mode,:not(.dark-mode)) input:focus-visible,html body:is(.dark-mode,:not(.dark-mode)) select:focus-visible,html body:is(.dark-mode,:not(.dark-mode)) textarea:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+
+/* ---- form controls ---- */
+html body:is(.dark-mode,:not(.dark-mode)) input:not([type=checkbox]):not([type=radio]):not([type=color]):not([type=range]),html body:is(.dark-mode,:not(.dark-mode)) select,html body:is(.dark-mode,:not(.dark-mode)) textarea{
+  background:var(--inp)!important;color:var(--t)!important;border:1px solid var(--gb)!important;border-radius:12px!important;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.12);transition:border-color .15s,box-shadow .15s}
+html body:is(.dark-mode,:not(.dark-mode)) input:focus,html body:is(.dark-mode,:not(.dark-mode)) select:focus,html body:is(.dark-mode,:not(.dark-mode)) textarea:focus{border-color:var(--acc2)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--acc2) 30%,transparent)!important}
+html body:is(.dark-mode,:not(.dark-mode)) input::placeholder,html body:is(.dark-mode,:not(.dark-mode)) textarea::placeholder{color:var(--t2)!important;opacity:.8}
+html body:is(.dark-mode,:not(.dark-mode)) select option{background:#0f1a36;color:#eef3ff}
+html body:is(.dark-mode,:not(.dark-mode)) input[type=checkbox],html body:is(.dark-mode,:not(.dark-mode)) input[type=radio]{accent-color:var(--acc2)}
+
+/* ---- charts (inline SVG) ---- */
+html body:is(.dark-mode,:not(.dark-mode)) .panel svg text,html body:is(.dark-mode,:not(.dark-mode)) .fee-graph-wrap svg text{fill:var(--t)}
+html body:is(.dark-mode,:not(.dark-mode)) .panel svg line[stroke="#000"],html body:is(.dark-mode,:not(.dark-mode)) .panel svg line[stroke="#ccc"],html body:is(.dark-mode,:not(.dark-mode)) .panel svg line[stroke="#999"]{stroke:var(--gb)}
+html body:is(.dark-mode,:not(.dark-mode)) .panel svg circle[stroke="#ddd"]{stroke:var(--ring,rgba(120,140,190,.3))}
+
+/* ---- tables ---- */
+html body:is(.dark-mode,:not(.dark-mode)) .datatable,html body:is(.dark-mode,:not(.dark-mode)) .dt{border-collapse:separate;border-spacing:0;color:var(--t)}
+html body:is(.dark-mode,:not(.dark-mode)) .datatable th,html body:is(.dark-mode,:not(.dark-mode)) .dt th{background:var(--gf)!important;color:var(--t)!important;border-bottom:1px solid var(--gb)!important;font-size:.82rem;letter-spacing:.4px;text-transform:uppercase}
+html body:is(.dark-mode,:not(.dark-mode)) .datatable td,html body:is(.dark-mode,:not(.dark-mode)) .dt td{background:transparent!important;color:var(--t)!important;border-bottom:1px solid color-mix(in srgb,var(--gb) 55%,transparent)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .datatable tr:hover td,html body:is(.dark-mode,:not(.dark-mode)) .dt tr:hover td{background:var(--gf2)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .dt tr.tot td{background:var(--gf)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .datatable th:first-child,html body:is(.dark-mode,:not(.dark-mode)) .dt th:first-child{border-top-left-radius:12px}
+html body:is(.dark-mode,:not(.dark-mode)) .datatable th:last-child,html body:is(.dark-mode,:not(.dark-mode)) .dt th:last-child{border-top-right-radius:12px}
+html body:is(.dark-mode,:not(.dark-mode)) .tag,html body:is(.dark-mode,:not(.dark-mode)) .cls-id{background:color-mix(in srgb,var(--acc2) 22%,transparent)!important;color:var(--t)!important;border:1px solid color-mix(in srgb,var(--acc2) 45%,transparent);border-radius:999px}
+html body:is(.dark-mode,:not(.dark-mode)) .ok{background:rgba(34,197,94,.85);border-radius:999px}html body:is(.dark-mode,:not(.dark-mode)) .lo{background:rgba(245,158,11,.9);border-radius:999px}
+html body:is(.dark-mode,:not(.dark-mode)) .msg{color:#f87171!important}
+html body:is(.dark-mode,:not(.dark-mode)) .grade,html body:is(.dark-mode,:not(.dark-mode)) .subject input.subname[readonly]{background:var(--gf2)!important;color:var(--t)!important;border-radius:10px}
+html body:is(.dark-mode,:not(.dark-mode)) hr{border:0;border-top:1px solid var(--gb)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .cb{border-radius:20px;background:color-mix(in srgb,var(--bx) 14%,var(--gf2))}
+html body:is(.dark-mode,:not(.dark-mode)) .sf-cat{border-radius:20px;color:var(--t)}
+html body:is(.dark-mode,:not(.dark-mode)) .sf-cat.on,html body:is(.dark-mode,:not(.dark-mode)) .sf-cat.on b,html body:is(.dark-mode,:not(.dark-mode)) .sf-cat.on small{color:#fff!important}
+
+/* ---- landing / sign-in / admin pages ---- */
+html body:is(.dark-mode,:not(.dark-mode)) header:not(#themePreviewTop){background:transparent!important;color:var(--t)}
+html body:is(.dark-mode,:not(.dark-mode)) #themePreviewTop{color:#fff!important}
+html body:is(.dark-mode,:not(.dark-mode)) .theme-preview{border-color:var(--gb);background:var(--gf2)}
+html body:is(.dark-mode,:not(.dark-mode)) .theme-preview-content{color:var(--t)}
+html body:is(.dark-mode,:not(.dark-mode)) .brand h1{color:var(--t)}html body:is(.dark-mode,:not(.dark-mode)) .brand p{color:var(--t2)}html body:is(.dark-mode,:not(.dark-mode)) .brand small{color:var(--acc2)}
+html body:is(.dark-mode,:not(.dark-mode)) main{color:var(--t)}
+html body:is(.dark-mode,:not(.dark-mode)) .schoolIdBox{background:linear-gradient(135deg,rgba(96,165,250,.3),rgba(59,130,246,.4))!important;border:1px solid var(--gb);border-radius:18px;color:#fff}
+html body:is(.dark-mode,:not(.dark-mode)) .switchLine a{color:var(--acc2)}
+
+/* ---- report page chrome (designer panels). The printed sheets stay exactly as designed. ---- */
+html body:is(.dark-mode,:not(.dark-mode)) .rg-box{border-radius:20px!important;background:var(--gf)!important;color:var(--t)!important;border:1px solid var(--gb)!important;
+  box-shadow:inset 0 1px 0 var(--hi),var(--gsh)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+html body:is(.dark-mode,:not(.dark-mode)) .rg-box b,html body:is(.dark-mode,:not(.dark-mode)) .rg-box small{color:var(--t)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .rg-ico{background:linear-gradient(135deg,var(--acc2),var(--acc))!important;color:#fff!important}
+html body:is(.dark-mode,:not(.dark-mode)) .rg-sub{color:var(--acc2)!important}
+html body:is(.dark-mode,:not(.dark-mode)) #reportDesigner h3{color:var(--t)}
+html body:is(.dark-mode,:not(.dark-mode)) .report-animation svg{border-radius:24px}
+
+/* ---- scrollbars ---- */
+html body *{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--acc2) 55%,transparent) transparent}
+
+/* ---- phones and reduced effects ---- */
+@media(max-width:700px){
+  html body:is(.dark-mode,:not(.dark-mode)) .sidebar{margin:8px 0 8px 8px;height:calc(100vh - 16px);top:8px;border-radius:22px;padding:12px 6px}
+  html body:is(.dark-mode,:not(.dark-mode)) .view{padding:14px}
+  html body:is(.dark-mode,:not(.dark-mode)) .topbar h1{font-size:1rem;overflow-wrap:anywhere}
+  html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink{padding:9px 10px!important;font-size:13px}
+  html body:is(.dark-mode,:not(.dark-mode)) .topbar{border-radius:20px!important;padding:12px 14px!important}
+}
+@media(prefers-reduced-transparency:reduce){
+  html body:is(.dark-mode,:not(.dark-mode)) .view,html body:is(.dark-mode,:not(.dark-mode)) section:not(.report-sheet),html body:is(.dark-mode,:not(.dark-mode)) .panel,html body:is(.dark-mode,:not(.dark-mode)) .card,html body:is(.dark-mode,:not(.dark-mode)) .sidebar,html body:is(.dark-mode,:not(.dark-mode)) .topbar,html body:is(.dark-mode,:not(.dark-mode)) .dc,html body:is(.dark-mode,:not(.dark-mode)) .rg-box{-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media print{
+  html body{background:#fff!important}
+  html body:is(.dark-mode,:not(.dark-mode)) .view,html body:is(.dark-mode,:not(.dark-mode)) section:not(.report-sheet),html body:is(.dark-mode,:not(.dark-mode)) .panel{background:#fff!important;box-shadow:none!important;border:0!important;color:#111827!important}
+}
+
+/* ---- Light Mode: deeper navy glass for sidebar and top bar so white text stays readable ---- */
+html body:not(.dark-mode) .sidebar{
+  background:linear-gradient(160deg,color-mix(in srgb,var(--ius-sidebar,#0B2545) 93%,transparent),color-mix(in srgb,var(--ius-sidebar,#0B2545) 80%,transparent))!important;
+  border-color:rgba(255,255,255,.55)!important}
+html body:not(.dark-mode) .topbar{
+  background:linear-gradient(120deg,color-mix(in srgb,var(--ius-topbar,#123F70) 94%,transparent),color-mix(in srgb,var(--ius-topbar,#123F70) 82%,transparent))!important;
+  border-color:rgba(255,255,255,.55)!important}
+html body:not(.dark-mode) .sidebar .navlink{background:rgba(255,255,255,.1)!important}
+
+/* =====================================================================
+   1.5.30 — logo follows the system colour, stronger 3D glass aura, splash screen
+   ===================================================================== */
+:root{--sys:#123F70}
+/* logo: a cut-out (transparent) mark turned to the system colour by theme-boot.js, with a soft glow in the same colour */
+img[src="logo.png"]{filter:hue-rotate(var(--logo-rot,-54deg)) saturate(var(--logo-sat,1)) drop-shadow(0 4px 10px color-mix(in srgb,var(--sys) 55%,transparent));transition:filter .3s;object-fit:contain}
+
+/* ---- stronger 3D glass: bevelled edge, curved sheen, inner and outer glow in the system colour ---- */
+html body:is(.dark-mode,:not(.dark-mode)) .view,html body:is(.dark-mode,:not(.dark-mode)) section:not(.report-sheet),html body:is(.dark-mode,:not(.dark-mode)) .panel,html body:is(.dark-mode,:not(.dark-mode)) .card,html body:is(.dark-mode,:not(.dark-mode)) .choiceCard,html body:is(.dark-mode,:not(.dark-mode)) .theme-settings,html body:is(.dark-mode,:not(.dark-mode)) .rg-card,html body:is(.dark-mode,:not(.dark-mode)) .rg-box,html body:is(.dark-mode,:not(.dark-mode)) .st-modal-box,html body:is(.dark-mode,:not(.dark-mode)) .modal-box,html body:is(.dark-mode,:not(.dark-mode)) .rcard{
+  background:linear-gradient(180deg,rgba(255,255,255,.17) 0%,rgba(255,255,255,.04) 32%,rgba(255,255,255,0) 62%),var(--gf)!important;
+  border:1px solid var(--gb)!important;
+  -webkit-backdrop-filter:blur(22px) saturate(170%) brightness(1.05);backdrop-filter:blur(22px) saturate(170%) brightness(1.05);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.22),inset 0 0 34px color-mix(in srgb,var(--sys) 16%,transparent),
+             0 24px 44px -14px rgba(0,0,0,.55),0 0 54px -10px color-mix(in srgb,var(--sys) 42%,transparent)!important;
+}
+html body:not(.dark-mode) .view,html body:not(.dark-mode) section:not(.report-sheet),html body:not(.dark-mode) .panel,html body:not(.dark-mode) .card,html body:not(.dark-mode) .rg-card,html body:not(.dark-mode) .rg-box,html body:not(.dark-mode) .rcard{
+  background:linear-gradient(180deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.3) 40%,rgba(255,255,255,0) 70%),var(--gf)!important;
+  box-shadow:inset 0 1.5px 0 #fff,inset 0 -2px 0 rgba(30,58,138,.12),inset 0 0 30px color-mix(in srgb,var(--sys) 8%,transparent),
+             0 22px 40px -16px color-mix(in srgb,var(--sys) 45%,rgba(15,23,42,.4)),0 0 40px -12px color-mix(in srgb,var(--sys) 30%,transparent)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .panel,html body:is(.dark-mode,:not(.dark-mode)) .card,html body:is(.dark-mode,:not(.dark-mode)) .dc,html body:is(.dark-mode,:not(.dark-mode)) .rcard,html body:is(.dark-mode,:not(.dark-mode)) .rg-box,html body:is(.dark-mode,:not(.dark-mode)) .pcard,html body:is(.dark-mode,:not(.dark-mode)) .vday{transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s}
+html body:is(.dark-mode,:not(.dark-mode)) .panel:hover,html body:is(.dark-mode,:not(.dark-mode)) .card:hover,html body:is(.dark-mode,:not(.dark-mode)) .rcard:hover,html body:is(.dark-mode,:not(.dark-mode)) .rg-box:hover{transform:translateY(-4px)}
+html body:is(.dark-mode,:not(.dark-mode)) .dc{
+  background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0) 55%),linear-gradient(145deg,color-mix(in srgb,var(--c) 46%,transparent),var(--gf2) 78%)!important;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.2),inset 0 0 30px color-mix(in srgb,var(--c) 28%,transparent),
+             0 20px 36px -12px color-mix(in srgb,var(--c) 55%,rgba(0,0,0,.5)),0 0 48px -8px color-mix(in srgb,var(--c) 55%,transparent)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .dc:hover{transform:translateY(-5px) scale(1.015)}
+html body:is(.dark-mode,:not(.dark-mode)) .student,html body:is(.dark-mode,:not(.dark-mode)) .payment-band,html body:is(.dark-mode,:not(.dark-mode)) .payroll-summary>div,html body:is(.dark-mode,:not(.dark-mode)) .vday,html body:is(.dark-mode,:not(.dark-mode)) .pcard,html body:is(.dark-mode,:not(.dark-mode)) .custom-table-editor,html body:is(.dark-mode,:not(.dark-mode)) .combined-student{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(0,0,0,.18),0 10px 22px -10px rgba(0,0,0,.4)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar{
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.35),inset 0 0 40px color-mix(in srgb,var(--sys) 24%,transparent),
+             0 26px 50px -14px rgba(0,0,0,.6),0 0 60px -10px color-mix(in srgb,var(--sys) 55%,transparent)}
+html body:is(.dark-mode,:not(.dark-mode)) .topbar{
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.3),inset 0 0 40px color-mix(in srgb,var(--sys) 22%,transparent),
+             0 20px 40px -14px rgba(0,0,0,.55),0 0 56px -10px color-mix(in srgb,var(--sys) 50%,transparent)}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink{
+  background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,.04) 55%),rgba(255,255,255,.06)!important;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),inset 0 -2px 0 rgba(0,0,0,.28),0 6px 12px -6px rgba(0,0,0,.5)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink:hover{transform:translateX(3px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -2px 0 rgba(0,0,0,.28),0 0 22px color-mix(in srgb,var(--sys) 60%,transparent)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink.active{
+  background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.04) 55%),linear-gradient(135deg,color-mix(in srgb,var(--acc2) 45%,transparent),color-mix(in srgb,var(--acc) 62%,transparent))!important;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7),inset 0 -2px 0 rgba(0,0,0,.25),0 0 26px color-mix(in srgb,var(--acc2) 70%,transparent),0 0 60px -4px color-mix(in srgb,var(--acc) 60%,transparent)!important}
+html body:is(.dark-mode,:not(.dark-mode)) .sidebar .navlink.sub{box-shadow:none!important;background:transparent!important}
+html body:is(.dark-mode,:not(.dark-mode)) button:not(.navlink):not(.rg-box):not(.theme-toggle):not(.tab):not(.cb-color):not([class*="c-"]){
+  background:linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,0) 52%),linear-gradient(135deg,#1e40af,#3b82f6);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.25),0 10px 20px -6px rgba(37,99,235,.55),0 0 22px -4px rgba(96,165,250,.5)}
+html body:is(.dark-mode,:not(.dark-mode)) button.green,html body:is(.dark-mode,:not(.dark-mode)) #pf-save,html body:is(.dark-mode,:not(.dark-mode)) #rs-save,html body:is(.dark-mode,:not(.dark-mode)) #saveResults,html body:is(.dark-mode,:not(.dark-mode)) #bk-export{
+  background:linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,0) 52%),linear-gradient(135deg,#16a34a,#0d9488)!important;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.25),0 10px 20px -6px rgba(22,163,74,.55),0 0 22px -4px rgba(96,165,250,.5)!important}
+html body:is(.dark-mode,:not(.dark-mode)) button.danger{background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0) 52%),linear-gradient(135deg,#dc2626,#e11d48);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.25),0 10px 20px -6px rgba(220,38,38,.55)}
+html body:is(.dark-mode,:not(.dark-mode)) input:not([type=checkbox]):not([type=radio]):not([type=color]):not([type=range]),html body:is(.dark-mode,:not(.dark-mode)) select,html body:is(.dark-mode,:not(.dark-mode)) textarea{box-shadow:inset 0 2px 5px rgba(0,0,0,.25),inset 0 -1px 0 rgba(255,255,255,.12)}
+html body:is(.dark-mode,:not(.dark-mode)) .qa button{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.22),0 10px 18px -8px rgba(0,0,0,.5)}
+
+/* header logo on the home / sign-in / admin / report pages: just the mark, glowing in the system colour */
+html body:is(.dark-mode,:not(.dark-mode)) .brand img[src="logo.png"]{filter:hue-rotate(var(--logo-rot,-54deg)) saturate(var(--logo-sat,1)) drop-shadow(0 0 14px color-mix(in srgb,var(--sys) 75%,transparent)) drop-shadow(0 8px 14px rgba(0,0,0,.35))}
+
+/* ---- top bar stays in place while the page scrolls under it, and uses its full width ---- */
+html body:is(.dark-mode,:not(.dark-mode)) .topbar{position:sticky!important;top:8px;z-index:60;margin-bottom:16px;
+  background:linear-gradient(120deg,color-mix(in srgb,var(--ius-topbar,#123F70) 90%,transparent),color-mix(in srgb,var(--ius-topbar,#123F70) 76%,transparent))!important}
+html body:not(.dark-mode) .topbar{background:linear-gradient(120deg,color-mix(in srgb,var(--ius-topbar,#123F70) 96%,transparent),color-mix(in srgb,var(--ius-topbar,#123F70) 88%,transparent))!important}
+html body:is(.dark-mode,:not(.dark-mode)) .topbar>div:first-child{flex:1 1 340px;min-width:0}
+html body:is(.dark-mode,:not(.dark-mode)) .topbar h1{font-size:clamp(.95rem,1.7vw,1.35rem);line-height:1.25;text-wrap:balance}
+html body:is(.dark-mode,:not(.dark-mode)) .tb-r{flex:0 0 auto;margin-left:auto}
+@media print{html body:is(.dark-mode,:not(.dark-mode)) .topbar{position:static!important}}
+html body:is(.dark-mode,:not(.dark-mode)) .theme-pick select.theme-toggle{padding:8px 12px;box-shadow:none}

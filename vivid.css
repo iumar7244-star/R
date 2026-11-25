@@ -1,0 +1,98 @@
+/* IUS AND SONS 1.5.36 — "Vivid" design theme.
+   Same system colours as the Classic design (sidebar, upper bar, active blue #1677E8, the coloured dashboard boxes),
+   with more life: rounded pill menu, floating bars and cards, soft coloured glows, gentle lift on hover and a short
+   fade-in when a page opens. Only active when <html data-design="vivid">. Printed report sheets are never touched. */
+html[data-design="vivid"]{--v-accent:#1677E8;--v-radius:16px;--v-shadow:0 10px 28px -12px rgba(15,23,42,.28);--v-shadow-hover:0 18px 36px -14px rgba(15,23,42,.38)}
+html[data-design="vivid"] body{font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;letter-spacing:.1px}
+
+/* ---- sidebar: same colour, pill menu ---- */
+html[data-design="vivid"] body .sidebar{padding:18px 0 12px;box-shadow:6px 0 24px -12px rgba(0,0,0,.45)}
+html[data-design="vivid"] body .sidebar .sideBrand{padding:10px 18px 16px}
+html[data-design="vivid"] body .sidebar .sideBrand span{letter-spacing:1.6px;font-size:16px}
+html[data-design="vivid"] body .sidebar nav{margin:8px 0 8px 12px;padding:10px 0 10px 8px;gap:4px;border-radius:18px 0 0 18px;
+  background:color-mix(in srgb,var(--ius-sidebar,#0B2545) 88%,#ffffff 12%);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+html[data-design="vivid"] body .sidebar .navlink{width:auto;margin:1px 12px 1px 0;padding:10px 16px;border-radius:999px;font-weight:600;
+  transition:background-color .18s ease,transform .18s ease,box-shadow .18s ease,padding .18s ease}
+html[data-design="vivid"] body .sidebar .navlink:hover{background:rgba(255,255,255,.1);transform:translateX(3px)}
+html[data-design="vivid"] body .sidebar .navlink.active{background:var(--v-accent)!important;color:#fff!important;padding-left:20px;
+  box-shadow:0 8px 20px -6px color-mix(in srgb,var(--v-accent) 75%,transparent),inset 0 1px 0 rgba(255,255,255,.25)}
+html[data-design="vivid"] body .sidebar .navlink.sub{padding-left:38px}
+html[data-design="vivid"] body .sidebar #logoutBtn{margin:14px 16px 4px 0;text-align:center;font-weight:800;letter-spacing:.6px;
+  border:1.5px solid rgba(255,255,255,.55);background:transparent}
+html[data-design="vivid"] body .sidebar #logoutBtn:hover{background:var(--v-accent);border-color:var(--v-accent);transform:none}
+
+/* ---- upper bar: same colour, floating rounded bar ---- */
+html[data-design="vivid"] body .topbar{border-radius:var(--v-radius);padding:16px 20px;
+  box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ius-topbar,#123F70) 85%,transparent),inset 0 1px 0 rgba(255,255,255,.18)}
+html[data-design="vivid"] body .topbar h1{letter-spacing:.3px}
+html[data-design="vivid"] body .tb-r .chip{border-radius:999px;box-shadow:0 4px 12px -4px rgba(0,0,0,.35)}
+html[data-design="vivid"] body .theme-toggle{border-radius:999px;transition:background-color .15s,transform .15s}
+html[data-design="vivid"] body .theme-toggle:hover{transform:translateY(-1px)}
+
+/* ---- dashboard boxes: same colours, more depth ---- */
+html[data-design="vivid"] body .dc{border-radius:var(--v-radius);padding:14px 16px;position:relative;overflow:hidden;
+  background-image:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,0) 55%);
+  box-shadow:0 12px 24px -12px rgba(15,23,42,.55),inset 0 1px 0 rgba(255,255,255,.3);transition:transform .2s ease,box-shadow .2s ease}
+html[data-design="vivid"] body .dc::after{content:"";position:absolute;right:-26px;top:-26px;width:92px;height:92px;border-radius:50%;
+  border:14px solid rgba(255,255,255,.14);pointer-events:none}
+html[data-design="vivid"] body .dc:hover{transform:translateY(-4px);box-shadow:0 20px 32px -14px rgba(15,23,42,.6),inset 0 1px 0 rgba(255,255,255,.3)}
+html[data-design="vivid"] body .dc b{font-size:26px;letter-spacing:.2px}
+
+/* ---- white panels and cards: rounded, floating ---- */
+html[data-design="vivid"] body .panel,html[data-design="vivid"] body .rcard,html[data-design="vivid"] body .theme-settings,
+html[data-design="vivid"] body .student,html[data-design="vivid"] body .choiceCard,html[data-design="vivid"] body .card{
+  border-radius:var(--v-radius);box-shadow:var(--v-shadow);transition:transform .2s ease,box-shadow .2s ease}
+html[data-design="vivid"] body .panel{padding:16px 18px}
+html[data-design="vivid"] body .panel:hover,html[data-design="vivid"] body .rcard:hover{box-shadow:var(--v-shadow-hover)}
+html[data-design="vivid"] body .rcard:hover{transform:translateY(-3px)}
+html[data-design="vivid"] body .panel h4{font-size:16px;font-weight:800}
+html[data-design="vivid"] body .appMain>.view{border-radius:calc(var(--v-radius) + 4px)}
+
+/* ---- charts: soft glow on bars, rings and lines ---- */
+html[data-design="vivid"] body .panel svg rect,html[data-design="vivid"] body .panel svg path,html[data-design="vivid"] body .panel svg polyline,
+html[data-design="vivid"] body .fee-graph-wrap svg rect{filter:drop-shadow(0 4px 6px rgba(15,23,42,.18))}
+html[data-design="vivid"] body .panel svg rect{rx:4px}
+
+/* ---- quick actions and buttons: same colours, pill shape and lift ---- */
+html[data-design="vivid"] body .qa{gap:10px}
+html[data-design="vivid"] body .qa button{border-radius:14px;padding:14px 6px;box-shadow:0 10px 18px -10px rgba(15,23,42,.6),inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s}
+html[data-design="vivid"] body .qa button:hover{transform:translateY(-3px);filter:brightness(1.06)}
+html[data-design="vivid"] body .appMain button:not(.navlink):not(.rg-box):not(.tab):not(.cb-color):not(.theme-toggle):not(.qa button){border-radius:999px;
+  transition:transform .15s ease,box-shadow .15s ease,filter .15s}
+html[data-design="vivid"] body .appMain button:not(.navlink):not(.rg-box):not(.tab):not(.cb-color):not(.theme-toggle):not(:disabled):hover{transform:translateY(-1px);filter:brightness(1.06);box-shadow:0 8px 16px -8px rgba(15,23,42,.5)}
+html[data-design="vivid"] body .appMain button:not(.navlink):active{transform:translateY(1px)}
+
+/* ---- form fields ---- */
+html[data-design="vivid"] body .appMain input:not([type=checkbox]):not([type=radio]):not([type=color]):not([type=range]):not([type=file]),
+html[data-design="vivid"] body .appMain select,html[data-design="vivid"] body .appMain textarea{border-radius:10px;transition:border-color .15s,box-shadow .15s}
+html[data-design="vivid"] body .appMain input:focus,html[data-design="vivid"] body .appMain select:focus,html[data-design="vivid"] body .appMain textarea:focus{
+  outline:none;border-color:var(--v-accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--v-accent) 28%,transparent)}
+
+/* ---- tables ---- */
+html[data-design="vivid"] body .datatable{border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden}
+html[data-design="vivid"] body .datatable th{font-weight:800;letter-spacing:.2px}
+html[data-design="vivid"] body .datatable tbody tr{transition:background-color .15s}
+html[data-design="vivid"] body .datatable tbody tr:hover{background:color-mix(in srgb,var(--v-accent) 8%,transparent)}
+
+/* ---- report page (chrome only — the printed sheets stay exactly as designed) ---- */
+html[data-design="vivid"] body .rg-box{border-radius:var(--v-radius);box-shadow:var(--v-shadow);transition:transform .2s ease,box-shadow .2s ease}
+html[data-design="vivid"] body .rg-box:hover{transform:translateY(-3px);box-shadow:var(--v-shadow-hover)}
+html[data-design="vivid"] body .rg-box[aria-expanded="true"]{box-shadow:0 0 0 2px var(--v-accent),var(--v-shadow-hover)}
+
+/* ---- a short fade-in when a section opens ---- */
+@keyframes vividIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+html[data-design="vivid"] body .dc,html[data-design="vivid"] body .panel,html[data-design="vivid"] body .rcard{animation:vividIn .45s cubic-bezier(.2,.8,.2,1) both}
+html[data-design="vivid"] body .dc:nth-child(2),html[data-design="vivid"] body .panel:nth-child(2){animation-delay:.05s}
+html[data-design="vivid"] body .dc:nth-child(3),html[data-design="vivid"] body .panel:nth-child(3){animation-delay:.1s}
+html[data-design="vivid"] body .dc:nth-child(4){animation-delay:.15s}
+html[data-design="vivid"] body .dc:nth-child(5){animation-delay:.2s}
+html[data-design="vivid"] body .dc:nth-child(6){animation-delay:.25s}
+
+@media(prefers-reduced-motion:reduce){
+  html[data-design="vivid"] body *{animation:none!important;transition:none!important}
+  html[data-design="vivid"] body .dc:hover,html[data-design="vivid"] body .rcard:hover,html[data-design="vivid"] body .qa button:hover{transform:none}
+}
+@media print{
+  html[data-design="vivid"] body .dc,html[data-design="vivid"] body .panel,html[data-design="vivid"] body .rcard{animation:none;box-shadow:none}
+}
